@@ -3,15 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - enemy
+  - gach
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - De1
   - Water
   - UI
-  - 
+  - Main
   - 
   - 
   - 
