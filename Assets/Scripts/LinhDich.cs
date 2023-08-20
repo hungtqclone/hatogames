@@ -4,47 +4,42 @@ using UnityEngine;
 
 public class LinhDich : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private float moveSpeed = 2f;
+    private Transform playerTransform;
+    private Transform playerTransformEnemy;
+    private float stoppingDistance = 1f;
+    public LayerMask obstacleLayer ; // Layer của vật thể chướng ngại vật
+    private float obstacleDetectionDistance ; // Khoảng cách kiểm tra chướng ngại vật
+
+    private void Start()
     {
         
+        obstacleLayer = LayerMask.GetMask("enemy");
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransformEnemy = GameObject.FindGameObjectWithTag("enemy").transform;
+        obstacleDetectionDistance = 1f;
     }
-
-    private float moveSpeed = 2f; // Tốc độ di chuyển của enemy
-    private bool isCollidingWithPlayer = false; // Biến kiểm tra va chạm với player
-    private bool isMovingLeft = false; // Biến kiểm tra việc di chuyển sang trái
 
     private void Update()
     {
-        if (!isCollidingWithPlayer)
+        if (playerTransform != null)
         {
+            float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+
+            // Tạo một raycast để kiểm tra vật thể ở phía bên trái
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, obstacleDetectionDistance, obstacleLayer);
+
+            if (distanceToPlayer <= stoppingDistance || (hit.collider != null && hit.collider.gameObject != gameObject))
+            {
+                // Dừng di chuyển khi cách player đủ gần hoặc có vật thể ở phía bên trái
+                moveSpeed = 0f;
+            }
+            else
+            {
+                // Tiếp tục di chuyển khi cách player đủ xa và không có vật thể ở phía bên trái
+                moveSpeed = 2f;
                 transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+            }
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            // Nếu va chạm với đối tượng có tag "Player", dừng lại và đặt biến cờ isCollidingWithPlayer thành true
-            isCollidingWithPlayer = true;
-            moveSpeed = 0f;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            // Khi không còn va chạm với player, tiếp tục di chuyển và đặt biến cờ isCollidingWithPlayer thành false
-            isCollidingWithPlayer = false;
-            moveSpeed = 2f; // Đặt lại tốc độ di chuyển
-        }
-    }
-
-    public void StartMovingLeft()
-    {
-        // Kích hoạt việc di chuyển sang trái
-        isMovingLeft = true;
     }
 }
