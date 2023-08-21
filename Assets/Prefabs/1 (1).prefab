@@ -181,6 +181,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   Attack: 0
   doiMat: 0
+  VCong: 0
 --- !u!114 &22782980411980186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +197,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  interactionDistance: 1
+  interactionDistance: 0.75
   animator: {fileID: 0}
 --- !u!212 &22782980411980260
 SpriteRenderer:

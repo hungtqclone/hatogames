@@ -14,7 +14,7 @@ public class NguyenLuControler : MonoBehaviour
     private bool checkCong;
     private bool checkThu;
     public float VCong;
-    public bool checkGapQuai;
+    public static bool checkGapQuai;
     private void Start()
     {
         checkGapQuai = false;
@@ -62,6 +62,10 @@ public class NguyenLuControler : MonoBehaviour
             {
                 Thu();
             }
+        }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
     }
 
@@ -141,4 +145,6 @@ public class NguyenLuControler : MonoBehaviour
             }
         }
     }
+
+    
 }

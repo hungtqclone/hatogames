@@ -60,9 +60,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2873b1456c9cfe240a08eccdf405a73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stoppingDistance: 1.5
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+  obstacleDetectionDistance: 1
 --- !u!212 &6716922919154489141
 SpriteRenderer:
   m_ObjectHideFlags: 0

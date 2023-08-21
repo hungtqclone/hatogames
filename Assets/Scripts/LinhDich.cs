@@ -7,9 +7,9 @@ public class LinhDich : MonoBehaviour
     private float moveSpeed = 2f;
     private Transform playerTransform;
     private Transform playerTransformN_Lu;
-    private float stoppingDistance = 1f;
+    public float stoppingDistance ;
     public LayerMask obstacleLayer ; // Layer của vật thể chướng ngại vật
-    private float obstacleDetectionDistance ; // Khoảng cách kiểm tra chướng ngại vật
+    public float obstacleDetectionDistance ; // Khoảng cách kiểm tra chướng ngại vật
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class LinhDich : MonoBehaviour
         obstacleLayer = LayerMask.GetMask("enemy");
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         playerTransformN_Lu = GameObject.FindGameObjectWithTag("De1").transform;
-        obstacleDetectionDistance = 1f;
+        
     }
 
     private void Update()

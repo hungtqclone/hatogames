@@ -6,7 +6,7 @@ public class TimEnemyGan : MonoBehaviour
 {
     //public Transform playerTransform;  // Transform của nhân vật
     public LayerMask enemyLayer;      // Layer chứa các GameObject có tag "enemy"
-    public float interactionDistance = 3.5f;  // Khoảng cách tương tác
+    public float interactionDistance ;  // Khoảng cách tương tác
     public Animator animator;
     private NguyenLuControler nguyenLu;
     private void Start()
@@ -23,13 +23,13 @@ public class TimEnemyGan : MonoBehaviour
             // Thực hiện sự kiện khi gặp enemy gần nhất
             //Debug.Log("Nhân vật gặp enemy gần nhất!");
             animator.SetBool("CheckQuai", true);
-            
+            NguyenLuControler.checkGapQuai = true;
             // Ở đây, bạn có thể thực hiện animation hoặc hành động khác tùy theo yêu cầu của trò chơi
         }
         else
         {
             animator.SetBool("CheckQuai", false);
-
+            NguyenLuControler.checkGapQuai = false;
         }
     }
 
