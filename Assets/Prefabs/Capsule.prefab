@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1135723869496038071}
+  - component: {fileID: 8788735835907542883}
   - component: {fileID: 7245500587022479340}
   - component: {fileID: 6716922919154489141}
   - component: {fileID: 8413924312619603619}
@@ -34,6 +35,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8788735835907542883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3339630769346102332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1abc37e2222bc4db0c5b3749e709c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
 --- !u!114 &7245500587022479340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,10 +60,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2873b1456c9cfe240a08eccdf405a73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  stoppingDistance: 1.5
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+  obstacleDetectionDistance: 1
 --- !u!212 &6716922919154489141
 SpriteRenderer:
   m_ObjectHideFlags: 0

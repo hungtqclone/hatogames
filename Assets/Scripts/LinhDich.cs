@@ -6,18 +6,18 @@ public class LinhDich : MonoBehaviour
 {
     private float moveSpeed = 2f;
     private Transform playerTransform;
-    private Transform playerTransformEnemy;
-    private float stoppingDistance = 1f;
+    private Transform playerTransformN_Lu;
+    public float stoppingDistance ;
     public LayerMask obstacleLayer ; // Layer của vật thể chướng ngại vật
-    private float obstacleDetectionDistance ; // Khoảng cách kiểm tra chướng ngại vật
+    public float obstacleDetectionDistance ; // Khoảng cách kiểm tra chướng ngại vật
 
     private void Start()
     {
         
         obstacleLayer = LayerMask.GetMask("enemy");
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        playerTransformEnemy = GameObject.FindGameObjectWithTag("enemy").transform;
-        obstacleDetectionDistance = 1f;
+        playerTransformN_Lu = GameObject.FindGameObjectWithTag("De1").transform;
+        
     }
 
     private void Update()
@@ -25,11 +25,12 @@ public class LinhDich : MonoBehaviour
         if (playerTransform != null)
         {
             float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+            float distanceToDe1 = Vector3.Distance(transform.position, playerTransformN_Lu.position);
 
             // Tạo một raycast để kiểm tra vật thể ở phía bên trái
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, obstacleDetectionDistance, obstacleLayer);
 
-            if (distanceToPlayer <= stoppingDistance || (hit.collider != null && hit.collider.gameObject != gameObject))
+            if (distanceToDe1 <= stoppingDistance || distanceToPlayer <= stoppingDistance || (hit.collider != null && hit.collider.gameObject != gameObject))
             {
                 // Dừng di chuyển khi cách player đủ gần hoặc có vật thể ở phía bên trái
                 moveSpeed = 0f;
