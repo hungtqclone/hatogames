@@ -13,7 +13,7 @@ public class TestDiChuyen : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
+   
     private void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -25,11 +25,11 @@ public class TestDiChuyen : MonoBehaviour
         // Flipping the character's sprite based on movement direction
         if (horizontalInput > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1); // Facing right
+           RightNe(); // Facing right
         }
         else if (horizontalInput < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1); // Facing left
+           LeftNe(); // Facing left
         }
 
         // Jumping
@@ -53,5 +53,24 @@ public class TestDiChuyen : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    public void LeftNe()
+    {
+        Debug.Log("Left button pressed!");
+        rb.AddForce(Vector2.left * moveSpeed, ForceMode2D.Impulse);
+        transform.localScale = new Vector3(-1, 1, 1);
+    }
+
+    public void RightNe()
+    {
+        Debug.Log("right button pressed!");
+        rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Impulse);
+        //transform.localScale = new Vector3(1, 1, 1); // Flip sprite to face right
+    }
+    public void Upne()
+    {
+        Debug.Log("up button pressed!");
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 }
