@@ -9,7 +9,7 @@ public class ClockTrieuHoi : MonoBehaviour
 {
     public Button countdownButton;
     public TextMeshProUGUI countdownText;
-    public TextMeshProUGUI coinText; // Thêm reference đến TextMeshProUGUI hiển thị số coin
+    public TextMeshProUGUI coinText; 
     private bool canPress = true;
 
     private void Start()
@@ -23,6 +23,7 @@ public class ClockTrieuHoi : MonoBehaviour
         if (canPress)
         {
             StartCoroutine(StartCountdown());
+            //bỏ đoạn triệu hồi ở đây nè Vĩ nhém 10cm
         }
     }
 
