@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NguyenLuControler : MonoBehaviour
+public class NguyenNhacControll : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;
@@ -35,14 +35,14 @@ public class NguyenLuControler : MonoBehaviour
             checkGapQuai = false;
             checkThu = true;
             Attack = false;
-            
+
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
             checkThu = false;
             Attack = true;
             Vector2 scale = transform.localScale;
-          
+
             if (scale.x < 0)
             {
                 scale.x *= -1;
@@ -68,9 +68,9 @@ public class NguyenLuControler : MonoBehaviour
 
     void Cong()
     {
-            rb.velocity = new Vector2(0f, rb.velocity.y); // Đặt vận tốc x về 0 khi dừng lại
-            rb.velocity = new Vector2(speed, rb.velocity.y);
-            animator.SetFloat("Speed", 1);
+        rb.velocity = new Vector2(0f, rb.velocity.y); // Đặt vận tốc x về 0 khi dừng lại
+        rb.velocity = new Vector2(speed, rb.velocity.y);
+        animator.SetFloat("Speed", 1);
     }
 
     void Thu()
@@ -88,7 +88,7 @@ public class NguyenLuControler : MonoBehaviour
             }
             if (checkThu)
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed* 2.5f * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * 2.5f * Time.deltaTime);
                 animator.SetFloat("Speed", 2);
             }
             else
@@ -97,7 +97,7 @@ public class NguyenLuControler : MonoBehaviour
                 animator.SetFloat("Speed", 1);
             }
 
-           
+
         }
         else
         {
@@ -130,6 +130,4 @@ public class NguyenLuControler : MonoBehaviour
             }
         }
     }
-
-    
 }

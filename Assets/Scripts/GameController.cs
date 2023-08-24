@@ -18,8 +18,9 @@ public class GameController : MonoBehaviour
     {
         // Kiểm tra nếu đến thời điểm sinh enemy mới và số lượng enemy chưa đạt giới hạn
         spawnTimer += Time.deltaTime;
-        if (spawnTimer >= spawnInterval && enemyCount < 10)
+        if (spawnTimer >= spawnInterval && enemyCount < 3)
         {
+            
             SpawnEnemyAtPosition(new Vector3(8f, -3f, 0f)); // Thay đổi tọa độ x, y, z tại đây
             enemyCount++; // Tăng số lượng enemy đã tạo
             spawnTimer = 0f;
@@ -29,6 +30,8 @@ public class GameController : MonoBehaviour
     private void SpawnEnemyAtPosition(Vector3 position)
     {
         // Sinh ra một enemy mới từ Prefab và đặt vị trí theo tọa độ truyền vào
-        GameObject newEnemy = Instantiate(enemyPrefab, position, Quaternion.identity);
+        GameObject enemy = Instantiate(enemyPrefab);
+        enemy.transform.position = position;
+        //GameObject newEnemy = Instantiate(enemyPrefab, position, Quaternion.identity);
     }
 }

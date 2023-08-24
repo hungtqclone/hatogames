@@ -6,33 +6,45 @@ public class TimEnemyGan : MonoBehaviour
 {
     //public Transform playerTransform;  // Transform của nhân vật
     public LayerMask enemyLayer;      // Layer chứa các GameObject có tag "enemy"
-    public float interactionDistance ;  // Khoảng cách tương tác
+    public float interactionDistance;  // Khoảng cách tương tác
     public Animator animator;
-    private NguyenLuControler nguyenLu;
+    private bool check;
     private void Start()
     {
-        nguyenLu = new NguyenLuControler();
+        check = true;
         animator = GetComponent<Animator>();
     }
     private void Update()
     {
-        // Kiểm tra nếu có enemy nằm trong khoảng cách tương tác
+        KiemTra();
+    }
+    private void KiemTra()
+    {
         Collider2D nearestEnemyCollider = GetNearestEnemyCollider();
         if (nearestEnemyCollider != null)
         {
             // Thực hiện sự kiện khi gặp enemy gần nhất
             //Debug.Log("Nhân vật gặp enemy gần nhất!");
             animator.SetBool("CheckQuai", true);
-            NguyenLuControler.checkGapQuai = true;
+            animator.SetFloat("Speed", 0);
+            if (check)
+            {
+                NguyenLuControler.checkGapQuai = true;
+                check = false;
+            }
+           
+            
             // Ở đây, bạn có thể thực hiện animation hoặc hành động khác tùy theo yêu cầu của trò chơi
         }
         else
         {
+            animator.SetFloat("Speed", 1);
             animator.SetBool("CheckQuai", false);
             NguyenLuControler.checkGapQuai = false;
+            check = true;
+             
         }
     }
-
     private Collider2D GetNearestEnemyCollider()
     {
         // Tìm các GameObject enemy nằm trong khoảng cách interactionDistance

@@ -8,6 +8,7 @@ TagManager:
   - gach
   - kiem
   - De1
+  - NguyenNhac
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - UI
   - Main
   - enemy
-  - 
+  - De2
   - 
   - 
   - 
