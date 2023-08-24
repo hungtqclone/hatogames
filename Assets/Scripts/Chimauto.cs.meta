@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Chimauto.cs.meta
 guid: 977f23335eaed43418f2e8cd1a77730a
+========
+guid: ada68a0b31ef90043b5a862b6e586616
+timeCreated: 1516340906
+licenseType: Store
+>>>>>>>> parent of a0058da (update5):Assets/Free_Pack/BURLY-MAN_1_swordsman/Free_GM.cs.meta
 MonoImporter:
-  externalObjects: {}
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0

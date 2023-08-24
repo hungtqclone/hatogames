@@ -11,12 +11,18 @@ public class NguyenLuControler : MonoBehaviour
     public Animator animator;
     public bool Attack;
     public float doiMat;
+<<<<<<< HEAD
     public bool checkThu;
+=======
+    private bool checkCong;
+    private bool checkThu;
+>>>>>>> parent of a0058da (update5)
     public float VCong;
     public static bool checkGapQuai;
     private void Start()
     {
         checkGapQuai = false;
+        checkCong = true;
         rb = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
         Attack = true;
@@ -35,22 +41,23 @@ public class NguyenLuControler : MonoBehaviour
         {
             speed = 2;
             // Di chuyển enemy đến vị trí của nhân vật chính
-            checkGapQuai = false;
+            checkCong = false;
             checkThu = true;
             Attack = false;
             
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
+            checkCong = true;
             checkThu = false;
             Attack = true;
             speed = 1;
             Vector2 scale = transform.localScale;
-          
             if (scale.x < 0)
             {
                 scale.x *= -1;
                 transform.localScale = scale;
+
             }
         }
         if (!checkGapQuai)
@@ -72,9 +79,27 @@ public class NguyenLuControler : MonoBehaviour
 
     void Cong()
     {
+<<<<<<< HEAD
             // Đặt vận tốc x về 0 khi dừng lại
             rb.velocity = new Vector2(speed, rb.velocity.y);
         //animator.SetTrigger("DiBo");
+=======
+        if ( checkCong)
+        {
+            if(playerX > 5)
+            {
+                checkCong = false;
+            }
+            rb.velocity = new Vector2(VCong, rb.velocity.y);
+            animator.SetFloat("Speed", 1);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y); // Đặt vận tốc x về 0 khi dừng lại
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+            animator.SetFloat("Speed", 0);
+        }
+>>>>>>> parent of a0058da (update5)
     }
 
     void Thu()
@@ -90,9 +115,22 @@ public class NguyenLuControler : MonoBehaviour
                 scale.x *= -1;
                 transform.localScale = scale;
             }
+<<<<<<< HEAD
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
             //animator.SetTrigger("Chay");
             
+=======
+            if (checkThu)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed* 2.5f * Time.deltaTime);
+                animator.SetFloat("Speed", 1);
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                animator.SetFloat("Speed", 1);
+            }
+>>>>>>> parent of a0058da (update5)
 
            
         }

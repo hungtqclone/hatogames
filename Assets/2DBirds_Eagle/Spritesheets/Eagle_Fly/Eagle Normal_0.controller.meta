@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/2DBirds_Eagle/Spritesheets/Eagle_Fly/Eagle Normal_0.controller.meta
 guid: d38c1e3b09139ee41a3e8005033aec06
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
+========
+guid: e13b48eb753be864d9f991f47f3915fa
+timeCreated: 1516003961
+licenseType: Store
+NativeFormatImporter:
+>>>>>>>> parent of a0058da (update5):Assets/Free_Pack/BURLY-MAN_1_swordsman/Animation/Attack2.anim.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

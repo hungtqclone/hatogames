@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/EnemyGan.cs.meta
 guid: 8e489e8bffd106d4ea56f7c72181878e
+========
+guid: c5d410874abb6ef42a08ec990a009d3c
+timeCreated: 1519968762
+licenseType: Store
+>>>>>>>> parent of a0058da (update5):Assets/Free_Pack/Demo_GameResource/Script/CharacterController_2D.cs.meta
 MonoImporter:
-  externalObjects: {}
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0

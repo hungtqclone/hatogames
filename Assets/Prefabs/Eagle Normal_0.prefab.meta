@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Eagle Normal_0.prefab.meta
 guid: 2eb14ea8c02f71b46a26e6aba4d06ab7
 PrefabImporter:
+========
+guid: 0fd18bed60e6f1d41b25afa405e57634
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> parent of a0058da (update5):Assets/Free_Pack.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

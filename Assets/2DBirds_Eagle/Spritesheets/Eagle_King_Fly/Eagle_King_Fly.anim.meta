@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/2DBirds_Eagle/Spritesheets/Eagle_King_Fly/Eagle_King_Fly.anim.meta
 guid: 36a337ef75385ab40bd8f8452f4c8a9a
+========
+guid: df58f9ec2f354f842bc22f48f8809586
+timeCreated: 1516003403
+licenseType: Store
+>>>>>>>> parent of a0058da (update5):Assets/Free_Pack/BURLY-MAN_1_swordsman/Animation/Attack.anim.meta
 NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 7400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

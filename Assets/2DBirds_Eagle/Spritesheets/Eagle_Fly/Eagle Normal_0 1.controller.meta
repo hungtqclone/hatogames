@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/2DBirds_Eagle/Spritesheets/Eagle_Fly/Eagle Normal_0 1.controller.meta
 guid: d0afe1c3c2049bd49a6284eae4a1ec2d
+========
+guid: 2f453de20f36ceb45ab384d5c753bfe8
+>>>>>>>> parent of a0058da (update5):Assets/Free_Pack/BURLY-MAN_1_swordsman/Free_Pack_SceneSettings.lighting.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 9100000
+  mainObjectFileID: 4890085278179872738
   userData: 
   assetBundleName: 
   assetBundleVariant: 

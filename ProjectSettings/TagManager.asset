@@ -8,8 +8,11 @@ TagManager:
   - gach
   - kiem
   - De1
+<<<<<<< HEAD
   - NguyenNhac
   - bound
+=======
+>>>>>>> parent of a0058da (update5)
   layers:
   - Default
   - TransparentFX

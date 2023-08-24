@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/2DBirds_Eagle/Spritesheets/Eagle_Fly/chimbay.anim.meta
 guid: 73b0750b746c82c4dacbe91680789a97
+========
+guid: df4624fd0c58f7140a32204bf8264db4
+>>>>>>>> parent of a0058da (update5):Assets/Free_Pack/Demo_GameResource/Demo_GameSettings.lighting.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 7400000
+  mainObjectFileID: 4890085278179872738
   userData: 
   assetBundleName: 
   assetBundleVariant: 

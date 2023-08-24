@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/NguyenNhac.cs.meta
 guid: 4d82cf8f10b636d40b02fa2d3ed29d92
+========
+guid: 480be3d39707fc6409376a6be0cd57b3
+timeCreated: 1522228056
+licenseType: Store
+>>>>>>>> parent of a0058da (update5):Assets/Free_Pack/Demo_GameResource/Script/Demo_GM.cs.meta
 MonoImporter:
-  externalObjects: {}
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0

@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Movebg.cs.meta
 guid: c2f85219d3efa2c42892f95be8c18303
+========
+guid: 9b6987b2e5276164fa9934a70aa20d11
+timeCreated: 1520230719
+licenseType: Store
+>>>>>>>> parent of a0058da (update5):Assets/Free_Pack/Demo_GameResource/Script/ColliderEvent_Sender.cs.meta
 MonoImporter:
-  externalObjects: {}
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0
