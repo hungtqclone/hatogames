@@ -11,17 +11,16 @@ public class NguyenLuControler : MonoBehaviour
     public Animator animator;
     public bool Attack;
     public float doiMat;
-    private bool checkCong;
-    private bool checkThu;
+    public bool checkThu;
     public float VCong;
     public static bool checkGapQuai;
     private void Start()
     {
         checkGapQuai = false;
-        checkCong = true;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         Attack = true;
+        speed = 1;
 
         // Tìm game object có tag "Player" và gán cho player
         player = GameObject.FindGameObjectWithTag("Player");
@@ -29,27 +28,29 @@ public class NguyenLuControler : MonoBehaviour
 
     private void Update()
     {
+        
         playerX = Vector2.Distance(transform.position, player.transform.position);
 
         if (Input.GetKeyDown(KeyCode.D))
         {
+            speed = 2;
             // Di chuyển enemy đến vị trí của nhân vật chính
-            checkCong = false;
+            checkGapQuai = false;
             checkThu = true;
             Attack = false;
             
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            checkCong = true;
             checkThu = false;
             Attack = true;
+            speed = 1;
             Vector2 scale = transform.localScale;
+          
             if (scale.x < 0)
             {
                 scale.x *= -1;
                 transform.localScale = scale;
-
             }
         }
         if (!checkGapQuai)
@@ -71,21 +72,9 @@ public class NguyenLuControler : MonoBehaviour
 
     void Cong()
     {
-        if ( checkCong)
-        {
-            if(playerX > 5)
-            {
-                checkCong = false;
-            }
-            rb.velocity = new Vector2(VCong, rb.velocity.y);
-            animator.SetFloat("Speed", 1);
-        }
-        else
-        {
-            rb.velocity = new Vector2(0f, rb.velocity.y); // Đặt vận tốc x về 0 khi dừng lại
+            // Đặt vận tốc x về 0 khi dừng lại
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            animator.SetFloat("Speed", 0);
-        }
+        animator.SetTrigger("DiBo");
     }
 
     void Thu()
@@ -101,23 +90,16 @@ public class NguyenLuControler : MonoBehaviour
                 scale.x *= -1;
                 transform.localScale = scale;
             }
-            if (checkThu)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed* 2.5f * Time.deltaTime);
-                animator.SetFloat("Speed", 1);
-            }
-            else
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-                animator.SetFloat("Speed", 1);
-            }
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            animator.SetTrigger("Chay");
+            
 
            
         }
         else
         {
             checkThu = false;
-            animator.SetFloat("Speed", 0);
+            animator.SetTrigger("DungIm");
             Vector2 directionToPlayer = player.transform.position - transform.position;
             IEnumerator FlipScaleAfterDelay(Vector2 _scale)
             {

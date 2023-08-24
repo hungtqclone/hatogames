@@ -7,7 +7,14 @@ public class TrieuHoi : MonoBehaviour
     public GameObject characterPrefab; // Prefab của nhân vật phụ
     private GameObject spawnedCharacter; // Nhân vật phụ được tạo
     private bool check = true;
+    public Vector3  spawnPosition;
 
+    private void Start()
+    {
+        spawnPosition = transform.position;
+        spawnPosition.x = spawnPosition.x + 1.5f;
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +32,7 @@ public class TrieuHoi : MonoBehaviour
     // Tạo nhân vật phụ từ bên phải của nhân vật chính
     void SpawnCharacter()
     {
-        Vector3 spawnPosition = transform.position + Vector3.right * 2f; // Điểm bên phải của nhân vật chính
+          // Điểm bên phải của nhân vật chính
         spawnedCharacter = Instantiate(characterPrefab, spawnPosition, Quaternion.identity);
         check = false;
     }
