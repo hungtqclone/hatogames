@@ -49,11 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d82cf8f10b636d40b02fa2d3ed29d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
   player: {fileID: 0}
   playerX: 0
   anim: {fileID: 0}
-  attack: 0
   isRight: 0
 --- !u!114 &4936658048575404789
 MonoBehaviour:
@@ -67,6 +65,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e489e8bffd106d4ea56f7c72181878e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  interactionDistance: 0
+  anim: {fileID: 0}
 --- !u!212 &3535455338208797748
 SpriteRenderer:
   m_ObjectHideFlags: 0
