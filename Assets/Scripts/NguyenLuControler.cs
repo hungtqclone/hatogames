@@ -11,12 +11,14 @@ public class NguyenLuControler : MonoBehaviour
     public Animator animator;
     public bool Attack;
     public float doiMat;
+    private bool checkCong;
     private bool checkThu;
     public float VCong;
     public static bool checkGapQuai;
     private void Start()
     {
         checkGapQuai = false;
+        checkCong = true;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         Attack = true;
@@ -32,21 +34,22 @@ public class NguyenLuControler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             // Di chuyển enemy đến vị trí của nhân vật chính
-            checkGapQuai = false;
+            checkCong = false;
             checkThu = true;
             Attack = false;
             
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
+            checkCong = true;
             checkThu = false;
             Attack = true;
             Vector2 scale = transform.localScale;
-          
             if (scale.x < 0)
             {
                 scale.x *= -1;
                 transform.localScale = scale;
+
             }
         }
         if (!checkGapQuai)
@@ -68,9 +71,21 @@ public class NguyenLuControler : MonoBehaviour
 
     void Cong()
     {
+        if ( checkCong)
+        {
+            if(playerX > 5)
+            {
+                checkCong = false;
+            }
+            rb.velocity = new Vector2(VCong, rb.velocity.y);
+            animator.SetFloat("Speed", 1);
+        }
+        else
+        {
             rb.velocity = new Vector2(0f, rb.velocity.y); // Đặt vận tốc x về 0 khi dừng lại
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            animator.SetFloat("Speed", 1);
+            animator.SetFloat("Speed", 0);
+        }
     }
 
     void Thu()
@@ -89,7 +104,7 @@ public class NguyenLuControler : MonoBehaviour
             if (checkThu)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed* 2.5f * Time.deltaTime);
-                animator.SetFloat("Speed", 2);
+                animator.SetFloat("Speed", 1);
             }
             else
             {
