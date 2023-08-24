@@ -5,15 +5,9 @@ using UnityEngine;
 public class QuaiTest : MonoBehaviour
 {
     // Start is called before the first frame update
-    public  int hp;
-    public HeathBar heathBar;
-    private void Awake()
-    {
-        
-    }
+    public int hp;
     void Start()
     {
-        heathBar = GetComponentInChildren<HeathBar>();
         hp = 50;
     }
 
@@ -29,9 +23,8 @@ public class QuaiTest : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("kiem"))
         {
-            hp -= 25;
-            heathBar.UpdateHealthBar(hp, 50);
-            Debug.Log("trừ: " + 25);
+            hp -= 10;
+            Debug.Log("trừ: " + 10);
         }
     }
 }
