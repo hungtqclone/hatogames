@@ -8,6 +8,8 @@ TagManager:
   - gach
   - kiem
   - De1
+  - NguyenNhac
+  - bound
   layers:
   - Default
   - TransparentFX

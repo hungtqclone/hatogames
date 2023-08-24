@@ -83,5 +83,9 @@ public class NguyenNhac : MonoBehaviour
                 theScale.x = -0.6251f;
         }
         transform.localScale = theScale;
-    }  
+    }
+     public void setSpeed(float _speed)
+    {
+        speed = _speed;
+    }
 }
