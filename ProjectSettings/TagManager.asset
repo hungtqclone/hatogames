@@ -9,6 +9,7 @@ TagManager:
   - kiem
   - De1
   - NguyenNhac
+  - linh
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Main
   - enemy
   - De2
-  - 
+  - linh
   - 
   - 
   - 

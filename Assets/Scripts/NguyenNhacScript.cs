@@ -75,7 +75,7 @@ public class NguyenNhacScript : MonoBehaviour
 
     void Thu()
     {
-        if (playerX >= 2)
+        if (playerX >= 2.5)
         {
             Vector2 scale = transform.localScale;
             if (transform.position.x > player.transform.position.x && scale.x > 0
@@ -89,6 +89,7 @@ public class NguyenNhacScript : MonoBehaviour
             if (checkThu)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * 2.5f * Time.deltaTime);
+                Debug.Log("chay");
                 animator.SetFloat("Speed", 2);
             }
             else

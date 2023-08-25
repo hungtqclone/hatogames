@@ -25,8 +25,8 @@ public class TimEnemy2 : MonoBehaviour
         {
             // Thực hiện sự kiện khi gặp enemy gần nhất
             //Debug.Log("Nhân vật gặp enemy gần nhất!");
-            //animator.SetBool("CheckQuai", true);
-            //animator.SetFloat("Speed", 0);
+            animator.SetBool("CheckQuai", true);
+            animator.SetFloat("Speed", 0);
             if (check)
             {
                 Debug.Log("da gap quai");
@@ -39,8 +39,8 @@ public class TimEnemy2 : MonoBehaviour
         }
         else
         {
-            //animator.SetFloat("Speed", 1);
-           // animator.SetBool("CheckQuai", false);
+            animator.SetFloat("Speed", 1);
+            animator.SetBool("CheckQuai", false);
             NguyenNhacScript.checkGapQuai = false;
             // NguyenNhacScript.checkGapQuai = false;
             check = true;
