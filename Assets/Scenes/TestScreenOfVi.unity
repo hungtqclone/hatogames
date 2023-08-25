@@ -817,7 +817,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  interactionDistance: 0.75
+  interactionDistance: 5
   animator: {fileID: 0}
 --- !u!1 &895377900
 GameObject:
