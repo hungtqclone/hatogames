@@ -131,5 +131,8 @@ public class NguyenLuControler : MonoBehaviour
         }
     }
 
-    
+    public void SetCheckQuai(bool _check)
+    {
+        checkGapQuai = _check;
+    }
 }

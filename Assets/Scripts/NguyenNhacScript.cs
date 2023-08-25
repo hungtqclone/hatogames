@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NguyenNhacControll : MonoBehaviour
+public class NguyenNhacScript : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;

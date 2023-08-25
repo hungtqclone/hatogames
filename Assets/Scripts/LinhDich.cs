@@ -17,8 +17,9 @@ public class LinhDich : MonoBehaviour
         
         obstacleLayer = LayerMask.GetMask("enemy");
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        playerTransformN_Nhac = GameObject.FindGameObjectWithTag("NguyenNhac").transform;
         playerTransformN_Lu = GameObject.FindGameObjectWithTag("De1").transform;
+        playerTransformN_Nhac = GameObject.FindGameObjectWithTag("NguyenNhac").transform;
+        
 
     }
 

@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimEnemyGan : MonoBehaviour
+public class TimEnemy2 : MonoBehaviour
 {
-    //public Transform playerTransform;  // Transform của nhân vật
     public LayerMask enemyLayer;      // Layer chứa các GameObject có tag "enemy"
     public float interactionDistance;  // Khoảng cách tương tác
     public Animator animator;
@@ -26,26 +25,26 @@ public class TimEnemyGan : MonoBehaviour
         {
             // Thực hiện sự kiện khi gặp enemy gần nhất
             //Debug.Log("Nhân vật gặp enemy gần nhất!");
-            animator.SetBool("CheckQuai", true);
-            animator.SetFloat("Speed", 0);
+            //animator.SetBool("CheckQuai", true);
+            //animator.SetFloat("Speed", 0);
             if (check)
             {
-                NguyenLuControler.checkGapQuai = true;
-                //NguyenNhacScript.checkGapQuai = true;
+                Debug.Log("da gap quai");
+                NguyenNhacScript.checkGapQuai = true;
                 check = false;
             }
-           
-            
+
+
             // Ở đây, bạn có thể thực hiện animation hoặc hành động khác tùy theo yêu cầu của trò chơi
         }
         else
         {
-            animator.SetFloat("Speed", 1);
-            animator.SetBool("CheckQuai", false);
-            NguyenLuControler.checkGapQuai = false;
-           // NguyenNhacScript.checkGapQuai = false;
+            //animator.SetFloat("Speed", 1);
+           // animator.SetBool("CheckQuai", false);
+            NguyenNhacScript.checkGapQuai = false;
+            // NguyenNhacScript.checkGapQuai = false;
             check = true;
-             
+
         }
     }
     private Collider2D GetNearestEnemyCollider()
