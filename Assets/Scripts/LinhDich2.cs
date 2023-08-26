@@ -71,6 +71,7 @@ public class LinhDich2 : MonoBehaviour
         {
             gapNguyenLu = true;
             //Debug.Log("Đã gặp De1");
+            //>>>>>>>>>>>>>>>>>>>>>>>>>>>
         }else if (collision.gameObject.CompareTag("kiem"))
         {
             
