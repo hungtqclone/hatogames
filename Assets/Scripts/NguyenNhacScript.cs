@@ -14,8 +14,10 @@ public class NguyenNhacScript : MonoBehaviour
     private bool checkThu;
     public float VCong;
     public static bool checkGapQuai;
+    private float randomKhoangCach;
     private void Start()
     {
+        randomKhoangCach = 0;
         checkGapQuai = false;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -31,7 +33,9 @@ public class NguyenNhacScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
+
             // Di chuyển enemy đến vị trí của nhân vật chính
+            randomKhoangCach = Random.Range(1.5f, 3f);
             checkGapQuai = false;
             checkThu = true;
             Attack = false;
@@ -75,7 +79,7 @@ public class NguyenNhacScript : MonoBehaviour
 
     void Thu()
     {
-        if (playerX >= 2.5)
+        if (playerX >= randomKhoangCach)
         {
             Vector2 scale = transform.localScale;
             if (transform.position.x > player.transform.position.x && scale.x > 0
@@ -108,7 +112,6 @@ public class NguyenNhacScript : MonoBehaviour
             IEnumerator FlipScaleAfterDelay(Vector2 _scale)
             {
                 yield return new WaitForSeconds(0.5f);  // Chờ 0.5 giây
-
                 _scale.x *= -1;
                 transform.localScale = _scale;
             }

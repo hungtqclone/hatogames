@@ -14,8 +14,10 @@ public class NguyenLuControler : MonoBehaviour
     private bool checkThu;
     public float VCong;
     public static bool checkGapQuai;
+    private float randomKhoangCach;
     private void Start()
     {
+        randomKhoangCach = 0;
         checkGapQuai = false;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -32,6 +34,7 @@ public class NguyenLuControler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             // Di chuyển enemy đến vị trí của nhân vật chính
+            randomKhoangCach = Random.Range(0.25f, 1.5f);
             checkGapQuai = false;
             checkThu = true;
             Attack = false;

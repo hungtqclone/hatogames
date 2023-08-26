@@ -10,6 +10,7 @@ TagManager:
   - De1
   - NguyenNhac
   - linh
+  - kiemDich
   layers:
   - Default
   - TransparentFX
