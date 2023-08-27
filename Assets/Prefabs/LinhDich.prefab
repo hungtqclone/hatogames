@@ -480,7 +480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   hp: 100
-  hpKiemBiTru: 25
+  hpKiemBiTru: 10
   hpGoc: 0
   heathBar: {fileID: 0}
 --- !u!212 &375352844580893594
