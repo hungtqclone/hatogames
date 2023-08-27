@@ -23,7 +23,7 @@ public class NhanVatHealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        KtHP();
     }
 
    

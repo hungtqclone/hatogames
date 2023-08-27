@@ -38,10 +38,16 @@ public class MyLinh : MonoBehaviour
     public float moveSpeed;
     private Animator animator;
     private int enemyCollisionCount = 0; // Số lượng va chạm với enemy
-
+    //hp của linh đồng minh
+    public float hp;
+    public float hpKiemDichBiTru;
+    public float hpGoc;
+    public HeathBar heathBar;
     private void Start()
     {
         animator = GetComponent<Animator>();
+        heathBar = GetComponentInChildren<HeathBar>();
+        hpGoc = hp;
     }
 
     private void Update()
@@ -49,6 +55,14 @@ public class MyLinh : MonoBehaviour
         transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         // Kiểm tra xem có va chạm với ít nhất một enemy hay không
         KtQuai();
+        KtHP();
+    }
+    private void KtHP()
+    {
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     // kiểm tra gặp quái
     private void KtQuai()
@@ -72,6 +86,11 @@ public class MyLinh : MonoBehaviour
         {
             enemyCollisionCount++;
             Debug.Log("Đã gặp quái");
+        }else if (collision.gameObject.CompareTag("kiemDich"))
+        {
+            hp -= hpKiemDichBiTru;
+            heathBar.UpdateHealthBar(hp, hpGoc);
+            Debug.Log("trừ: " + hpKiemDichBiTru);
         }
     }
 
