@@ -245,6 +245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LinhDich
       objectReference: {fileID: 0}
+    - target: {fileID: 375352844580893588, guid: 50231f7f732723941846cda838665282, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 375352844580893593, guid: 50231f7f732723941846cda838665282, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -291,11 +295,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 375352844984945936, guid: 50231f7f732723941846cda838665282, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 375352844984945936, guid: 50231f7f732723941846cda838665282, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50231f7f732723941846cda838665282, type: 3}
@@ -581,7 +585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &582376028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,7 +1059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2625454299107597496, guid: c29fcfdea60defc4dbef87f539dde93d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2625454299107597501, guid: c29fcfdea60defc4dbef87f539dde93d, type: 3}
       propertyPath: m_RootOrder
@@ -1101,6 +1105,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3746986526860234173, guid: c29fcfdea60defc4dbef87f539dde93d, type: 3}
+      propertyPath: hpKiemDichBiTru
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5028376562570354615, guid: c29fcfdea60defc4dbef87f539dde93d, type: 3}
       propertyPath: speed
       value: 2
@@ -1108,6 +1116,18 @@ PrefabInstance:
     - target: {fileID: 5028376562570354615, guid: c29fcfdea60defc4dbef87f539dde93d, type: 3}
       propertyPath: player
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043288784850568069, guid: c29fcfdea60defc4dbef87f539dde93d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348614343039944234, guid: c29fcfdea60defc4dbef87f539dde93d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348614343039944234, guid: c29fcfdea60defc4dbef87f539dde93d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c29fcfdea60defc4dbef87f539dde93d, type: 3}
@@ -1188,7 +1208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4131046675400658837, guid: 1289c23dca85683479ba7e1b97c95f8a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1289c23dca85683479ba7e1b97c95f8a, type: 3}
@@ -1630,7 +1650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2338425965863234848, guid: edc9c26eeded5f9408dcb7e6d1cc0e61, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edc9c26eeded5f9408dcb7e6d1cc0e61, type: 3}
