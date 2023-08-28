@@ -30,6 +30,7 @@ public class LinhDich2 : MonoBehaviour
     private void Update()
     {
         transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+
         // Kiểm tra xem có va chạm với ít nhất một enemy hay không
         KtVaCham();
         KtDich();
@@ -75,8 +76,8 @@ public class LinhDich2 : MonoBehaviour
         }else if (collision.gameObject.CompareTag("kiem"))
         {
             
-            hp -= hpKiemBiTru;
-            heathBar.UpdateHealthBar(hp, hpGoc);
+            
+            DamgeHP(hpKiemBiTru);
             Debug.Log("trừ: " + hpKiemBiTru);
         }else if (collision.gameObject.CompareTag("Player"))
         {
@@ -107,5 +108,17 @@ public class LinhDich2 : MonoBehaviour
 
             gapNguyenHue = false;
         }
+        else if (collision.gameObject.CompareTag("Arrow"))
+        {
+
+            DamgeHP(20);
+        }
+    }
+
+    void DamgeHP(float damge)
+    {
+        hp -= damge;
+        heathBar.UpdateHealthBar(hp, hpGoc);
+        
     }
 }
