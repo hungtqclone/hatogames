@@ -39,8 +39,13 @@ public class LinhDich2 : MonoBehaviour
     {
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            animator.SetBool("Die", true);
+            moveSpeed = 0;
         }
+    }
+    public void GietDich()
+    {
+        Destroy(gameObject);
     }
     // kiểm tra gặp quái
     private void KtVaCham()
