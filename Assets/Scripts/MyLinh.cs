@@ -43,11 +43,13 @@ public class MyLinh : MonoBehaviour
     public float hpKiemDichBiTru;
     public float hpGoc;
     public HeathBar heathBar;
+    private Rigidbody2D rb2d;
     private void Start()
     {
         animator = GetComponent<Animator>();
         heathBar = GetComponentInChildren<HeathBar>();
         hpGoc = hp;
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -61,9 +63,25 @@ public class MyLinh : MonoBehaviour
     {
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            if (rb2d != null)
+            {
+                rb2d.simulated = false; // Tắt tính năng mô phỏng của Rigidbody2D
+            }
+            else
+            {
+                Debug.LogWarning("Rigidbody2D không được tìm thấy trên đối tượng này.");
+            }
+            moveSpeed = 0;
+            animator.SetBool("Die", true);
+            
         }
     }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
     // kiểm tra gặp quái
     private void KtQuai()
     {

@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     {
         // Kiểm tra nếu đến thời điểm sinh enemy mới và số lượng enemy chưa đạt giới hạn
         spawnTimer += Time.deltaTime;
-        if (spawnTimer >= spawnInterval && enemyCount < 3)
+        if (spawnTimer >= spawnInterval && enemyCount < 10)
         {
             
             SpawnEnemyAtPosition(new Vector3(8f, -3f, 0f)); // Thay đổi tọa độ x, y, z tại đây

@@ -478,9 +478,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b6e6dda3abfc34d94784fa90109891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 1
   hp: 100
-  hpKiemBiTru: 25
+  hpKiemBiTru: 10
   hpGoc: 0
   heathBar: {fileID: 0}
 --- !u!212 &375352844580893594

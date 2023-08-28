@@ -11,12 +11,16 @@ public class NhanVatHealthBar : MonoBehaviour
     private bool checkHoiMau;
     private float hpGoc;
     private HeathBar heathBar;
+    private Animator animator;
+    private Rigidbody2D rb2d;
     //Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         checkHoiMau = false;
         heathBar = GetComponentInChildren<HeathBar>();
         hpGoc = hp;
+        rb2d = GetComponent<Rigidbody2D>();
         StartCoroutine(HoiHP());
     }
 
@@ -49,8 +53,21 @@ public class NhanVatHealthBar : MonoBehaviour
     {
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            // NguyenNhacScript.speed = 0;
+            if (rb2d != null)
+            {
+                rb2d.simulated = false; // Tắt tính năng mô phỏng của Rigidbody2D
+            }
+            else
+            {
+                Debug.LogWarning("Rigidbody2D không được tìm thấy trên đối tượng này.");
+            }
+            animator.SetBool("Die", true);
         }
+    }
+    public void Die()
+    {
+        Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

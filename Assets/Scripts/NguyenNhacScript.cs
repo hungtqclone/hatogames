@@ -5,7 +5,7 @@ using UnityEngine;
 public class NguyenNhacScript : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float speed;
+    public  float speed;
     public GameObject player;
     public float playerX;
     public Animator animator;
@@ -17,6 +17,7 @@ public class NguyenNhacScript : MonoBehaviour
     private float randomKhoangCach;
     private void Start()
     {
+        
         randomKhoangCach = 0;
         checkGapQuai = false;
         rb = GetComponent<Rigidbody2D>();
@@ -31,28 +32,28 @@ public class NguyenNhacScript : MonoBehaviour
     {
         playerX = Vector2.Distance(transform.position, player.transform.position);
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-
-            // Di chuyển enemy đến vị trí của nhân vật chính
-            randomKhoangCach = Random.Range(1.5f, 3f);
-            checkGapQuai = false;
-            checkThu = true;
-            Attack = false;
-
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            checkThu = false;
-            Attack = true;
-            Vector2 scale = transform.localScale;
-
-            if (scale.x < 0)
+            Attack = !Attack;
+            if (Attack)
             {
-                scale.x *= -1;
-                transform.localScale = scale;
+                checkThu = false;
+                Vector2 scale = transform.localScale;
+
+                if (scale.x < 0)
+                {
+                    scale.x *= -1;
+                    transform.localScale = scale;
+                }
+            }
+            else
+            {
+                randomKhoangCach = Random.Range(2f, 3f);
+                checkGapQuai = false;
+                checkThu = true;
             }
         }
+
         if (!checkGapQuai)
         {
             if (Attack)
