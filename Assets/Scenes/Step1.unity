@@ -839,6 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextButton: {fileID: 162475680}
   skipButton: {fileID: 661010619}
+  imageComponent: {fileID: 1140911672}
 --- !u!1 &1140911670
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +849,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1140911671}
-  - component: {fileID: 1140911674}
   - component: {fileID: 1140911673}
   - component: {fileID: 1140911672}
   m_Layer: 5
@@ -916,20 +916,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140911670}
   m_CullTransparentMesh: 1
---- !u!114 &1140911674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140911670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f3e9d06f1d30a44b8a8811c7eeff067, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextButton: {fileID: 162475680}
-  skipButton: {fileID: 661010619}
 --- !u!1 &1374421725
 GameObject:
   m_ObjectHideFlags: 0
