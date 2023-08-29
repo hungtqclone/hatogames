@@ -52,10 +52,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b520bc633b6074e80afc96103b6e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HpHoiTheoTime: 0
+  timeHoiHp: 0
   hp: 100
   hpKiemDichBiTru: 2
-  hpGoc: 0
-  heathBar: {fileID: 0}
 --- !u!114 &433389793357206053
 MonoBehaviour:
   m_ObjectHideFlags: 0
