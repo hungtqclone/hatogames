@@ -11,6 +11,8 @@ public class Spawner : MonoBehaviour
         this.LoadComponents();
     }
 
+   
+
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +22,7 @@ public class Spawner : MonoBehaviour
     protected virtual void LoadComponents()
     {
         this.LoadPrefabs();
+        this.HidePrefabs();
     }
 
     protected virtual void LoadPrefabs()
@@ -35,6 +38,7 @@ public class Spawner : MonoBehaviour
         foreach (Transform prefab in this.prefabs)
         {
             prefab.gameObject.SetActive(false);
+
         }
     }
 }
