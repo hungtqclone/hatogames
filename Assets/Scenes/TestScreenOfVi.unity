@@ -543,7 +543,7 @@ Transform:
   - {fileID: 1987938446}
   - {fileID: 994005192}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &262247070
 MonoBehaviour:
@@ -838,7 +838,7 @@ Transform:
   - {fileID: 215462868}
   - {fileID: 1592873715}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &582376027
 GameObject:
@@ -1499,7 +1499,7 @@ GameObject:
   - component: {fileID: 1031291084}
   - component: {fileID: 1031291083}
   - component: {fileID: 1031291082}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TuongDich1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1592,7 +1592,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041640955
 GameObject:
@@ -2057,6 +2057,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   interactionDistance: 5
+  distanceToEnemy: 0
   bulletPrefabs: {fileID: 931483603}
   shootTip: {fileID: 488611153}
 --- !u!1 &1686167583
