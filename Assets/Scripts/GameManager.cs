@@ -5,10 +5,15 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] protected List<Transform> enemyList;
-    float delayEnemy;
+    public float delayEnemy;
+    public float delayCreate = 0f;
+    public float dem = 0;
+    public int dot1, dot2, dot3;
+    [SerializeField] protected GameObject tuongDich;
     // Start is called before the first frame update
     void Start()
     {
+        
        delayEnemy = 0f;
         EnemyList();
     }
@@ -17,11 +22,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         delayEnemy -= Time.deltaTime;
-        if(delayEnemy <= 0f)
-        {
-            SpawnerEnemyList();
-            delayEnemy = 3f;
-        }
+        delayCreate -= Time.deltaTime;
+
+        TaoQuaiTheoDot();
+        
     }
 
 
@@ -37,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     protected virtual void SpawnerEnemyList()
     {
+        
         foreach(Transform prefab in this.enemyList)
         {
             CreateEnemy(prefab);
@@ -50,5 +55,31 @@ public class GameManager : MonoBehaviour
             enemySpawner.gameObject.SetActive(true);
     }
 
-  
+    protected virtual void TaoQuaiTheoDot()
+    {
+        if (dem == dot3+ dot2 + dot1) return;
+        if (delayCreate <= 0f)
+        {
+            if (dem <= dot3+ dot2 + dot1)
+            {
+                if (delayEnemy <= 0f)
+                {
+                    SpawnerEnemyList();
+                    delayEnemy = 3f;
+                    dem++;
+                }
+                
+                if (dem == dot1 || dem == dot1 + dot2)
+                {
+                    delayCreate = 30f;
+                }
+                if (dem == dot3 + dot2 + dot1)
+                {
+                  GameObject tuongDich1 =  Instantiate(tuongDich, tuongDich.transform.position, Quaternion.Euler(0, 0, 0));
+                    tuongDich1.gameObject.SetActive(true);
+                }
+            }
+
+        }
+    }
 }

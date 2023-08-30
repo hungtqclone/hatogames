@@ -21,7 +21,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         anim.SetFloat("Speed", Mathf.Abs(InputManager.Instance.Horizontal));
         anim.SetBool("IsShooting", isShooting);
-        anim.SetFloat("DistanceToEnemy", PlayerShooting.Instance.DistanceToEnemy);
+        anim.SetFloat("DistanceToEnemy", PlayerShooting.Instance.NearestDistance);
 
         
     }

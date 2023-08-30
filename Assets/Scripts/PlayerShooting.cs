@@ -11,6 +11,10 @@ public class PlayerShooting : MonoBehaviour
     public float interactionDistance = 10;
     [SerializeField] protected float distanceToEnemy;
     public float DistanceToEnemy { get => distanceToEnemy; }
+
+
+    [SerializeField] protected float nearestDistance;
+    public float NearestDistance { get => nearestDistance; }
     [SerializeField] protected Transform bulletPrefabs;
     [SerializeField] protected Transform shootTip;
     // Start is called before the first frame update
@@ -72,13 +76,13 @@ public class PlayerShooting : MonoBehaviour
 
         }
         Collider2D nearestCollider = null;
-        float nearestDistance = Mathf.Infinity;
+        nearestDistance = Mathf.Infinity;
 
         // Duyệt qua danh sách các enemy gần nhất
         foreach (Collider2D enemyCollider in hitEnemies)
         {
             // Tính khoảng cách từ nhân vật đến enemy
-            distanceToEnemy = Vector2.Distance(transform.position, enemyCollider.transform.position);
+            distanceToEnemy = Vector2.Distance(transform.parent.position, enemyCollider.transform.position);
 
             if (distanceToEnemy < nearestDistance)
             {
@@ -86,6 +90,8 @@ public class PlayerShooting : MonoBehaviour
                 nearestDistance = distanceToEnemy;
                 nearestCollider = enemyCollider;
             }
+
+          
         }
 
         return nearestCollider;
