@@ -6,6 +6,7 @@ public class NguyenLuControler : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;
+    protected float speed2;
     public GameObject player;
     public float playerX;
     public Animator animator;
@@ -22,6 +23,8 @@ public class NguyenLuControler : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         Attack = true;
+        speed2 = speed;
+        speed = 0f;
 
         // Tìm game object có tag "Player" và gán cho player
         player = GameObject.FindGameObjectWithTag("Player");
@@ -30,7 +33,10 @@ public class NguyenLuControler : MonoBehaviour
     private void Update()
     {
         playerX = Vector2.Distance(transform.position, player.transform.position);
-
+        if(Input.GetKey(KeyCode.Z))
+        {
+            speed = speed2;
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             Attack = !Attack;

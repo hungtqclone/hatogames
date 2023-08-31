@@ -6,6 +6,7 @@ public class NguyenNhacScript : MonoBehaviour
 {
     private Rigidbody2D rb;
     public  float speed;
+    public  float speed2;
     public GameObject player;
     public float playerX;
     public Animator animator;
@@ -23,6 +24,8 @@ public class NguyenNhacScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         Attack = true;
+        speed2 = speed;
+        speed = 0f;
 
         // Tìm game object có tag "Player" và gán cho player
         player = GameObject.FindGameObjectWithTag("Player");
@@ -32,6 +35,10 @@ public class NguyenNhacScript : MonoBehaviour
     {
         playerX = Vector2.Distance(transform.position, player.transform.position);
 
+        if(Input.GetKey(KeyCode.X))
+        {
+            speed = speed2;
+        }
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Attack = !Attack;
@@ -93,9 +100,10 @@ public class NguyenNhacScript : MonoBehaviour
             }
             if (checkThu)
             {
+                animator.SetFloat("Speed", 2);
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * 2.5f * Time.deltaTime);
                 Debug.Log("chay");
-                animator.SetFloat("Speed", 2);
+                
             }
             else
             {
