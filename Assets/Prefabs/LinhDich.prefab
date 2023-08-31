@@ -482,7 +482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Danh: {fileID: 8300000, guid: 51d456632e1911c4da7e5002c3669462, type: 3}
-  amLuong: 0
   Die: {fileID: 8300000, guid: 794d43565df0cac41bcbe3641dd163f3, type: 3}
 --- !u!114 &375352844580893598
 MonoBehaviour:
