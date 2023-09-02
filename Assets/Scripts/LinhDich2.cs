@@ -41,12 +41,14 @@ public class LinhDich2 : MonoBehaviour
     {
         if (hp <= 0)
         {
+            
             animator.SetBool("Die", true);
             moveSpeed = 0;
         }
     }
     public void GietDich()
     {
+        TienGoiLinh.coins += 25;
         Destroy(gameObject);
     }
     // kiểm tra gặp quái
