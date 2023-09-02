@@ -59,8 +59,7 @@ public class EnemySpawner : MonoBehaviour
 
     protected virtual void CreateEnemy(Transform enemy)
     {
-        Transform enemySpawner = Instantiate(enemy, enemy.transform.position, Quaternion.Euler(0, 0, 0));
-        
+        Transform enemySpawner = Instantiate(enemy,new Vector3(enemy.transform.position.x, enemy.transform.position.y+ Random.Range(-0.2f, 0.2f),0) , Quaternion.Euler(0, 0, 0));
         enemySpawner.gameObject.SetActive(true);
         listSpawner.Add(enemySpawner);
     }

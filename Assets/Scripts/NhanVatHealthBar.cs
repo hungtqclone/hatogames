@@ -36,7 +36,7 @@ public class NhanVatHealthBar : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(timeHoiHp);
-            if (hp<100 && checkHoiMau)
+            if (hp< hpGoc && checkHoiMau)
             {
                     hp += HpHoiTheoTime;
                     heathBar.UpdateHealthBar(hp, hpGoc);
