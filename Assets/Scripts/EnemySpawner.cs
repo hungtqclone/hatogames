@@ -10,12 +10,15 @@ public class EnemySpawner : MonoBehaviour
     public float dem = 0;
     public int dot1, dot2, dot3;
     [SerializeField] protected GameObject tuongDich;
+    [SerializeField] protected List<Transform> listSpawner;
+    public bool checkEnemy;
     // Start is called before the first frame update
     void Start()
     {
-
+        this.listSpawner = new List<Transform>();
         delayEnemy = 0f;
         EnemyList();
+        checkEnemy = true;
     }
 
     // Update is called once per frame
@@ -23,8 +26,10 @@ public class EnemySpawner : MonoBehaviour
     {
         delayEnemy -= Time.deltaTime;
         delayCreate -= Time.deltaTime;
-
         TaoQuaiTheoDot();
+        RemoveMissingGameObjects();
+
+
 
     }
 
@@ -41,45 +46,60 @@ public class EnemySpawner : MonoBehaviour
 
     protected virtual void SpawnerEnemyList()
     {
-
+        
         foreach (Transform prefab in this.enemyList)
         {
             CreateEnemy(prefab);
+            
 
         }
     }
 
+    
+
     protected virtual void CreateEnemy(Transform enemy)
     {
         Transform enemySpawner = Instantiate(enemy, enemy.transform.position, Quaternion.Euler(0, 0, 0));
+        
         enemySpawner.gameObject.SetActive(true);
+        listSpawner.Add(enemySpawner);
     }
 
     protected virtual void TaoQuaiTheoDot()
     {
-        if (dem == dot3 + dot2 + dot1) return;
         if (delayCreate <= 0f)
         {
             if (dem <= dot3 + dot2 + dot1)
             {
-                if (delayEnemy <= 0f)
+                if (delayEnemy <= 0f && checkEnemy)
                 {
                     SpawnerEnemyList();
-                    delayEnemy = 3f;
+                    delayEnemy = 0.5f;
                     dem++;
                 }
 
                 if (dem == dot1 || dem == dot1 + dot2)
                 {
-                    delayCreate = 30f;
+                    if (listSpawner.Count == 0) {
+                        checkEnemy = true;
+                        Debug.Log("enemy ne");
+                        delayCreate = 5f;
+                        return;
+                    }
+                    checkEnemy = false;
                 }
                 if (dem == dot3 + dot2 + dot1)
                 {
-                    GameObject tuongDich1 = Instantiate(tuongDich, tuongDich.transform.position, Quaternion.Euler(0, 0, 0));
-                    tuongDich1.gameObject.SetActive(true);
+                    
+                    tuongDich.gameObject.SetActive(true);
+                    return;
                 }
             }
 
         }
+    }
+    protected virtual void RemoveMissingGameObjects()
+    {
+        listSpawner.RemoveAll(item => item == null);
     }
 }
