@@ -65,13 +65,13 @@ public class EnemySpawner : MonoBehaviour
                 if (delayEnemy <= 0f)
                 {
                     SpawnerEnemyList();
-                    delayEnemy = 3f;
+                    delayEnemy = 0.5f;
                     dem++;
                 }
 
                 if (dem == dot1 || dem == dot1 + dot2)
                 {
-                    delayCreate = 30f;
+                    delayCreate = 5f;
                 }
                 if (dem == dot3 + dot2 + dot1)
                 {

@@ -11,6 +11,7 @@ public class LinhDich2 : MonoBehaviour
     private bool gapNguyenLu;
     private bool gapNguyenNhac;
     private bool gapNguyenHue;
+    private bool gapThanhDM;
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     public float hp;
     public float hpKiemBiTru;
@@ -22,6 +23,7 @@ public class LinhDich2 : MonoBehaviour
         gapNguyenLu = false;
         gapNguyenNhac = false;
         gapNguyenHue = false;
+        gapThanhDM = false;
         heathBar = GetComponentInChildren<HeathBar>();
         hpGoc = hp;
         //hp = 50;
@@ -50,7 +52,7 @@ public class LinhDich2 : MonoBehaviour
     // kiểm tra gặp quái
     private void KtVaCham()
     {
-        if (enemyCollisionCount > 0 || gapNguyenLu || gapNguyenNhac || gapNguyenHue)
+        if (enemyCollisionCount > 0 || gapNguyenLu || gapNguyenNhac || gapNguyenHue || gapThanhDM)
         {
             //Debug.Log("số quái đã gặp" + enemyCollisionCount);
             animator.SetBool("CheckEnemy", true);
@@ -86,8 +88,16 @@ public class LinhDich2 : MonoBehaviour
             Debug.Log("trừ: " + hpKiemBiTru);
         }else if (collision.gameObject.CompareTag("Player"))
         {
-
             gapNguyenHue = true;
+        }
+        else if (collision.gameObject.CompareTag("ThanhDM"))
+        {
+            gapThanhDM = true;
+        }
+        else if (collision.gameObject.CompareTag("Arrow"))
+        {
+
+            DamgeHP(20);
         }
     }
 
@@ -113,10 +123,9 @@ public class LinhDich2 : MonoBehaviour
 
             gapNguyenHue = false;
         }
-        else if (collision.gameObject.CompareTag("Arrow"))
+        else if (collision.gameObject.CompareTag("ThanhDM"))
         {
-
-            DamgeHP(20);
+            gapThanhDM = false;
         }
     }
 

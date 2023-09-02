@@ -12,6 +12,7 @@ TagManager:
   - linh
   - kiemDich
   - Arrow
+  - ThanhDM
   layers:
   - Default
   - TransparentFX
