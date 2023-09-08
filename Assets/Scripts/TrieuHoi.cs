@@ -8,10 +8,11 @@ public class TrieuHoi : MonoBehaviour
     private GameObject spawnedCharacter; // Nhân vật phụ được tạo
     private float timeDelay;
     public TextMeshProUGUI time;
+    public EnemySpawner enemySpawner;
     // Update is called once per frame
     private void Start()
     {
-        
+        enemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
         timeDelay = 2f;
         time.text = "" + timeDelay;
     }
@@ -36,7 +37,7 @@ public class TrieuHoi : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
-                SpawnCharacter();
+                enemySpawner.SpawnerLinhDM();
                 TienGoiLinh.coins -= 25;
                 timeDelay = 2f;
             }

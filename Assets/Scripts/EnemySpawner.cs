@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    private static EnemySpawner instance;
+    public static EnemySpawner Instance { get => instance; }
+
     [SerializeField] protected List<Transform> enemyList;
     public float delayEnemy;
     public float delayCreate = 0f;
@@ -12,13 +15,18 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] protected GameObject tuongDich;
     [SerializeField] protected List<Transform> listSpawner;
     public bool checkEnemy;
+    public Transform holder;
+    public List<Transform> listPositionSpawner;
     // Start is called before the first frame update
     void Start()
     {
         this.listSpawner = new List<Transform>();
+        holder = transform.Find("Holder");
+        this.listPositionSpawner = new List<Transform>();
         delayEnemy = 0f;
         EnemyList();
         checkEnemy = true;
+        EnemySpawner.instance = this;
     }
 
     // Update is called once per frame
@@ -42,25 +50,35 @@ public class EnemySpawner : MonoBehaviour
         {
             this.enemyList.Add(prefab);
         }
+        Transform prefabsEnemyPos = transform.Find("Position");
+        foreach (Transform prefab in prefabsEnemyPos)
+        {
+            this.listPositionSpawner.Add(prefab);
+        }
     }
 
-    protected virtual void SpawnerEnemyList()
+    protected virtual void SpawnerEnemyList(string name, Transform position)
     {
         
         foreach (Transform prefab in this.enemyList)
         {
-            CreateEnemy(prefab);
-            
+            if (prefab.name == name)
+            {
+                CreateEnemy(prefab,position);
+
+            }
+
 
         }
     }
 
     
 
-    protected virtual void CreateEnemy(Transform enemy)
+    protected virtual void CreateEnemy(Transform enemy,Transform position)
     {
-        Transform enemySpawner = Instantiate(enemy,new Vector3(enemy.transform.position.x, enemy.transform.position.y+ Random.Range(-0.2f, 0.2f),0) , Quaternion.Euler(0, 0, 0));
+        Transform enemySpawner = Instantiate(enemy,new Vector3(position.transform.position.x, position.transform.position.y+ Random.Range(-0.2f, 0.2f),0) , Quaternion.Euler(0, 0, 0));
         enemySpawner.gameObject.SetActive(true);
+        enemySpawner.parent = this.holder;
         listSpawner.Add(enemySpawner);
     }
 
@@ -72,7 +90,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 if (delayEnemy <= 0f && checkEnemy)
                 {
-                    SpawnerEnemyList();
+                    SpawnerEnemyList("LinhDich", listPositionSpawner[1]);
                     delayEnemy = 0.5f;
                     dem++;
                 }
@@ -100,5 +118,11 @@ public class EnemySpawner : MonoBehaviour
     protected virtual void RemoveMissingGameObjects()
     {
         listSpawner.RemoveAll(item => item == null);
+    }
+
+    public void SpawnerLinhDM()
+    {
+        SpawnerEnemyList("LinhDM", listPositionSpawner[0]);
+
     }
 }
