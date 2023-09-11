@@ -44,7 +44,7 @@ public class CastleAttack : MonoBehaviour
             if(timeUpdate <= 0)
             {
                 AttackEnemy();
-                timeUpdate = 3f;
+                timeUpdate = 0.5f;
             }
             // Ở đây, bạn có thể thực hiện animation hoặc hành động khác tùy theo yêu cầu của trò chơi
         }

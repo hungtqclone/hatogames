@@ -3095,8 +3095,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameScore:
     levelScores: []
-  level: 0
-  score: 0
+    solider1: 0
+    solider2: 0
+    solider3: 0
+  level: 1
+  coin: 0
+  soSao: 0
+  solider1: 0
+  solider2: 0
+  solider3: 0
 --- !u!4 &655596273
 Transform:
   m_ObjectHideFlags: 0
@@ -3427,7 +3434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &904293323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6848,7 +6855,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1582072796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.04, y: -10.89, z: 0}
+  m_LocalPosition: {x: 1.38, y: -10.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9781,7 +9788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &5749529836739527191
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,22 +8,35 @@ using static Cinemachine.DocumentationSortingAttribute;
 public class GameScore
 {
     public List<LevelScore> levelScores;
+    public int solider1;
+    public int solider2;
+    public int solider3;
 }
 
 [System.Serializable]
 public class LevelScore
 {
     public int level;
-    public int score;  
+    public int coin;
+    public int soSao;
 }
+
+
+
+
+
 public class SavingFile : MonoBehaviour
 {
     private static SavingFile instance;
-    public static SavingFile Instance { get => instance; }
+    public static SavingFile Instance { get => instance; set => instance = value; }
 
     public GameScore gameScore;
     public int level;
-    public int score;
+    public int coin;
+    public int soSao;
+    public static int solider1;
+    public static int solider2;
+    public static int solider3;
     private void Start()
     {
         if (instance != null)
@@ -35,15 +48,19 @@ public class SavingFile : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
             LoadData();
         SavingFile.instance = this;
+        solider1 = gameScore.solider1;
+        solider2 = gameScore.solider2;
+        solider3 = gameScore.solider3;
         
     }
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Alpha1))
+        if (solider1 != gameScore.solider1 || solider2 != gameScore.solider2 || solider3 != gameScore.solider3)
         {
             Debug.Log("Save :");
-            Save(level,score);
+            Save(level,coin,soSao);
+            SaveSolider(solider1,solider2,solider3);
         }
         if (Input.GetKeyUp(KeyCode.Alpha2))
         {
@@ -75,28 +92,40 @@ public class SavingFile : MonoBehaviour
         Debug.Log("File, save, at path: " + filePath);
     }
 
-    public void Save(int level, int score)
+    public void Save(int level, int coin,int soSao)
     {
         foreach(var levelScore  in gameScore.levelScores) 
         {
+           
             if(levelScore.level == level)
-            {
-                if(score > levelScore.score)
-                {
-                    levelScore.score = score;
-                    SaveData();
-                    return;
-                }
+            {   levelScore.coin = coin;
+                if(levelScore.soSao < soSao) levelScore.soSao = soSao;
+
+                SaveData();
+                return;
             }
+            
         }
+                
+            LevelScore lScore = new LevelScore();
+            lScore.level = level;
+            lScore.coin = coin;
+        lScore.soSao = soSao;
 
-        LevelScore lScore = new LevelScore();
-        lScore.level = level;
-        lScore.score = score;
+            gameScore.levelScores.Add(lScore);
+            SaveData();
 
-        gameScore.levelScores.Add(lScore);
+    }
+    public void SaveSolider(int solider1, int solider2, int solider3)
+    {
+            gameScore.solider1 = solider1;
+            gameScore.solider2 = solider2;
+            gameScore.solider3 = solider3;
 
-        SaveData();
+            SaveData();
+
+
+
     }
     public void Load(int level)
     {
@@ -104,7 +133,7 @@ public class SavingFile : MonoBehaviour
         {
             if( levelScore.level == level)
             {
-                Debug.Log("Load level sore: " + level + " " + levelScore.score);
+                Debug.Log("Load level sore: " + level + " " + levelScore.coin);
                 return;
             }
         }
