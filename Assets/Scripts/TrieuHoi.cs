@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class TrieuHoi : MonoBehaviour
 {
-    public GameObject characterPrefab; // Prefab của nhân vật phụ
+    public static GameObject characterPrefab; // Prefab của nhân vật phụ
     private GameObject spawnedCharacter; // Nhân vật phụ được tạo
     private float timeDelay;
     public TextMeshProUGUI time;
