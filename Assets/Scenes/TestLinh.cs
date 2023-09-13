@@ -17,6 +17,7 @@ public class TestLinh : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         savingFile = GameObject.Find("SaveData").GetComponent<SavingFile>();   
     }
 
@@ -84,6 +85,12 @@ public class TestLinh : MonoBehaviour
     public void ChonLinh8()
     {
         ChonLinh(8);
+
+    }
+    public void NextMap()
+    {
+        SceneManager.LoadScene(7);
+
 
     }
 

@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class TestListLinh : MonoBehaviour
 {
     [SerializeField] protected List<Transform> listChonLinh1;
+    [SerializeField] protected List<Transform> listOtuong;
     [SerializeField] protected List<Transform> listOtuong1;
     [SerializeField] protected List<Transform> listOtuong2;
     [SerializeField] protected List<Transform> listOtuong3;
@@ -20,10 +21,13 @@ public class TestListLinh : MonoBehaviour
     protected int solider3;
     protected string nameSolider1, nameSolider2,nameSolider3;
 
+  
+    
     // Start is called before the first frame update
     void Start()
     {
         savingFile = GameObject.Find("SaveData").GetComponent<SavingFile>();
+
         listChonLinh1 = new List<Transform>();
         solider1 = SavingFile.solider1;
         solider2 = SavingFile.solider2;
@@ -32,8 +36,6 @@ public class TestListLinh : MonoBehaviour
         nameSolider1 = "GameObject (" + SavingFile.solider1 + ")";
         nameSolider2 = "GameObject (" + SavingFile.solider2 + ")";
         nameSolider3 = "GameObject (" + SavingFile.solider3 + ")";
-        
-
         ListLinh();
     }
 
@@ -49,16 +51,17 @@ public class TestListLinh : MonoBehaviour
         
         if(solider1 != SavingFile.solider1 || solider2 != SavingFile.solider2 || solider3 != SavingFile.solider3)
         {
-            //listOtuong1[SavingFile.solider1 - 1].gameObject.SetActive(true);
-            //listOtuong2[SavingFile.solider2 - 1].gameObject.SetActive(true);
-            //listOtuong3[SavingFile.solider3 - 1].gameObject.SetActive(true);
-            ListLinh();
+            listOtuong1[SavingFile.solider1 - 1].gameObject.SetActive(true);
+            listOtuong2[SavingFile.solider2 - 1].gameObject.SetActive(true);
+            listOtuong3[SavingFile.solider3 - 1].gameObject.SetActive(true);
+            //ListLinh();
             Debug.Log("thay đổi tướng");
-            //listOtuong[0] = listChonLinh1[SavingFile.solider1 - 1];
-            //listOtuong[1] = listChonLinh1[SavingFile.solider2 - 1];
-            //listOtuong[2] = listChonLinh1[SavingFile.solider3 - 1];
+            //listOtuong11.GetComponent<SpriteRenderer>().sprite = listChonLinh1[SavingFile.solider1 - 1].GetComponent<SpriteRenderer>().sprite;
+            //listOtuong22.GetComponent<SpriteRenderer>().sprite = listChonLinh1[SavingFile.solider2 - 1].GetComponent<SpriteRenderer>().sprite;
+            //listOtuong33.GetComponent<SpriteRenderer>().sprite = listChonLinh1[SavingFile.solider3 - 1].GetComponent<SpriteRenderer>().sprite;
+
         }
-        
+
     }
 
     protected virtual void ListLinh()
@@ -112,9 +115,10 @@ public class TestListLinh : MonoBehaviour
         {
             this.listOtuong1.Add(Otuong);
             Otuong.gameObject.SetActive(false);
-            if(Otuong.name == nameSolider1)
+            if (Otuong.name == nameSolider1)
             {
                 Otuong.gameObject.SetActive(true);
+
             }
 
         }
@@ -138,5 +142,6 @@ public class TestListLinh : MonoBehaviour
             }
 
         }
+        
     }
 }
