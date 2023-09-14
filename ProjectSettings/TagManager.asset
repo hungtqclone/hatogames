@@ -14,6 +14,7 @@ TagManager:
   - Arrow
   - ThanhDM
   - testTag
+  - CongThanh
   layers:
   - Default
   - TransparentFX

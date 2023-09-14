@@ -103,6 +103,11 @@ public class LinhDich2 : MonoBehaviour
 
             DamgeHP(20);
         }
+        else if (collision.gameObject.CompareTag("CongThanh"))
+        {
+
+            DamgeHP(50);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
