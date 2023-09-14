@@ -7,14 +7,13 @@ public class Ten : MonoBehaviour
     public float initialSpeed ; // Tốc độ ban đầu của viên đạn
     public float angle ; // Góc ném parabol
     private Rigidbody2D rb;
-    public float timebay;
     protected float maxY;
     private float temp;
    
 
     private void Start()
     {
-        
+
         rb = GetComponent<Rigidbody2D>();
         // Chuyển đổi góc ném từ độ sang radian
         float radians = angle * Mathf.Deg2Rad;
@@ -25,7 +24,6 @@ public class Ten : MonoBehaviour
         // Áp dụng vận tốc ban đầu
         Vector2 initialVelocity = new Vector2(initialVelocityX, initialVelocityY);
         rb.velocity = initialVelocity;
-        timebay = 0.5f;
     }
 
     private void Update()
@@ -37,7 +35,7 @@ public class Ten : MonoBehaviour
             Debug.Log("Vận tốc: " + speed);
         }
        
-        timebay -= Time.deltaTime;
+        
         
     }
     private void FixedUpdate()
@@ -74,6 +72,10 @@ public class Ten : MonoBehaviour
         if (collision.gameObject.CompareTag("enemy"))
         {
             Destroy(gameObject);
+        }else if (collision.gameObject.CompareTag("gach"))
+        {
+            Destroy(gameObject);
         }
     }
+    
 }

@@ -9,19 +9,20 @@ public class KiemTraVaCham : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeDelay = 2f;
+        //timeDelay = 2f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeDelay -= Time.deltaTime;
-        if(timeDelay <= 0)
-        {
-            Transform bulletArrow =  Instantiate(arow);
-            bulletArrow.gameObject.SetActive(true);
-            timeDelay = 2f;
-        }
+        //timeDelay -= Time.deltaTime;
+        //if (timeDelay <= 0)
+        //{
+        //    Transform bulletArrow = Instantiate(arow);
+        //    bulletArrow.gameObject.SetActive(true);
+        //    timeDelay = 2f;
+        //}
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,5 +30,10 @@ public class KiemTraVaCham : MonoBehaviour
         {
             Debug.Log("Bắt va cham Enemy");
         }
+    }
+    public void GoiTen()
+    {
+        Transform bulletArrow = Instantiate(arow);
+        bulletArrow.gameObject.SetActive(true);
     }
 }
