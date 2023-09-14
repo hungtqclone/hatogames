@@ -62,10 +62,10 @@ public class SavingFile : MonoBehaviour
             Save(level,coin,soSao);
             SaveSolider(solider1,solider2,solider3);
         }
-        if (Input.GetKeyUp(KeyCode.Alpha2))
-        {
-            Load(level);
-        }
+        //if (Input.GetKeyUp(KeyCode.Alpha2))
+        //{
+        //    Load(level);
+        //}
     }
     public void LoadData()
     {

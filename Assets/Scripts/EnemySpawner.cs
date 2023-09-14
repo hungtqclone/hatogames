@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     public int dot1, dot2, dot3;
     [SerializeField] protected GameObject tuongDich;
     [SerializeField] protected List<Transform> listSpawner;
+    public SavingFile savingFile;
     public bool checkEnemy;
     public Transform holder;
     public List<Transform> listPositionSpawner;
@@ -23,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
         this.listSpawner = new List<Transform>();
         holder = transform.Find("Holder");
         this.listPositionSpawner = new List<Transform>();
+        this.savingFile = GameObject.Find("SaveData").GetComponent<SavingFile>();
         delayEnemy = 0f;
         EnemyList();
         checkEnemy = true;
@@ -36,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
         delayCreate -= Time.deltaTime;
         TaoQuaiTheoDot();
         RemoveMissingGameObjects();
-
+        SpawnerLinhTa();
 
 
     }
@@ -123,6 +125,17 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnerLinhDM()
     {
         SpawnerEnemyList("LinhDM", listPositionSpawner[0]);
+
+    }
+
+    public void SpawnerLinhTa()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            string linh1 = enemyList[SavingFile.solider1].name;
+            SpawnerEnemyList(linh1, listPositionSpawner[0]);
+
+        }
 
     }
 }
