@@ -9,6 +9,12 @@ public class ChuyenScreen : MonoBehaviour
 {
     public GameObject panel;
     public GameObject pausePanel;
+    public SavingFile savingFile;
+
+    private void Start()
+    {
+        savingFile = GameObject.Find("SaveData").GetComponent<SavingFile>();
+    }
     public void StartNe()
     {
         SceneManager.LoadScene(1);

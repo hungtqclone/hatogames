@@ -31,12 +31,13 @@ public class SavingFile : MonoBehaviour
     public static SavingFile Instance { get => instance; set => instance = value; }
 
     public GameScore gameScore;
-    public int level;
-    public int coin;
-    public int soSao;
+    public static int level;
+    public static int coin;
+    public static int soSao;
     public static int solider1;
     public static int solider2;
     public static int solider3;
+    public static bool chayLanDau = true;
     private void Start()
     {
         if (instance != null)
@@ -46,28 +47,38 @@ public class SavingFile : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(this.gameObject);
-            LoadData();
+        LoadData();
         SavingFile.instance = this;
-        solider1 = gameScore.solider1;
-        solider2 = gameScore.solider2;
-        solider3 = gameScore.solider3;
-        if(solider1 ==0 || solider2 ==0 || solider3 == 0)
+        Debug.Log("Save :");
+        if(chayLanDau)
         {
-            solider1 = 1;
-            solider2 = 2;
-            solider3 = 3;
+            Save(level, coin, soSao);
+            SaveSolider(solider1, solider2, solider3);
+        }else
+        {
+            solider1 = gameScore.solider1;
+            solider2 = gameScore.solider2;
+            solider3 = gameScore.solider3;
         }
         
+
+       
+
+
     }
 
     private void Update()
     {
-        if (solider1 != gameScore.solider1 || solider2 != gameScore.solider2 || solider3 != gameScore.solider3)
+        if(chayLanDau) 
         {
-            Debug.Log("Save :");
-            Save(level,coin,soSao);
-            SaveSolider(solider1,solider2,solider3);
+            if (Input.GetKey(KeyCode.Alpha1))
+            {
+                Debug.Log("Save :");
+                Save(level, coin, soSao);
+                SaveSolider(solider1, solider2, solider3);
+            }
         }
+        
         //if (Input.GetKeyUp(KeyCode.Alpha2))
         //{
         //    Load(level);
@@ -100,7 +111,13 @@ public class SavingFile : MonoBehaviour
 
     public void Save(int level, int coin,int soSao)
     {
-        foreach(var levelScore  in gameScore.levelScores) 
+        if (gameScore == null)
+        {
+            gameScore = new GameScore();
+            gameScore.levelScores = new List<LevelScore>();
+        }
+
+        foreach (var levelScore  in gameScore.levelScores) 
         {
            
             if(levelScore.level == level)
@@ -116,7 +133,7 @@ public class SavingFile : MonoBehaviour
             LevelScore lScore = new LevelScore();
             lScore.level = level;
             lScore.coin = coin;
-        lScore.soSao = soSao;
+            lScore.soSao = soSao;
 
             gameScore.levelScores.Add(lScore);
             SaveData();
@@ -146,4 +163,6 @@ public class SavingFile : MonoBehaviour
         Debug.Log("Load level sore: " + level + " " + 0);
 
     }
+
+  
 }

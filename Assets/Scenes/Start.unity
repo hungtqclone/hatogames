@@ -345,7 +345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &255399867
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1241,7 +1241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &672502101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,7 +1297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &682411494
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1381,7 +1381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &685322938
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2801,6 +2801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1026052615}
+  - component: {fileID: 1026052616}
   - component: {fileID: 1026052614}
   m_Layer: 0
   m_Name: SaveData
@@ -2826,9 +2827,6 @@ MonoBehaviour:
     solider1: 0
     solider2: 0
     solider3: 0
-  level: 0
-  coin: 0
-  soSao: 0
 --- !u!4 &1026052615
 Transform:
   m_ObjectHideFlags: 0
@@ -2844,6 +2842,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1026052616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026052613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc6ffad66c5c9a4a9bbd87093a5271b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChayLanDau: 1
+  solider1: 1
+  solider2: 2
+  solider3: 3
+  level: 1
+  coin: 0
+  soSao: 0
 --- !u!1 &1042212379
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,7 +3073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1106538893
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3811,7 +3828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1245925997
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4485,7 +4502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1400282663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4500,6 +4517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
   pausePanel: {fileID: 0}
+  savingFile: {fileID: 0}
 --- !u!4 &1400282664
 Transform:
   m_ObjectHideFlags: 0
@@ -4531,7 +4549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1428980988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4942,7 +4960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1552285475
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5127,7 +5145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1639100626
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5288,7 +5306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1700158613
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5585,7 +5603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1763587005
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5888,7 +5906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1872389344
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6876,7 +6894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2079922869
 SpriteRenderer:
   m_ObjectHideFlags: 0
