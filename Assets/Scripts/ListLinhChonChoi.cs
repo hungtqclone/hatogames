@@ -24,14 +24,22 @@ public class ListLinhChonChoi : MonoBehaviour
     void Start()
     {
         savingFile = GameObject.Find("SaveData").GetComponent<SavingFile>();
-        solider1 = SavingFile.solider1;
-        solider2 = SavingFile.solider2;
-        solider3 = SavingFile.solider3;
-        //listOtuong = new List<Transform>();
-        nameSolider3 = ""+SavingFile.solider3;
-        nameSolider2 = ""+SavingFile.solider2;
-        nameSolider1 = ""+SavingFile.solider1;
-        ListLinh();
+        if(SavingFile.solider1 != null && SavingFile.solider2 != null && SavingFile.solider3 != null)
+        {
+            solider1 = SavingFile.solider1;
+            solider2 = SavingFile.solider2;
+            solider3 = SavingFile.solider3;
+            //listOtuong = new List<Transform>();
+            nameSolider3 = "" + SavingFile.solider3;
+            nameSolider2 = "" + SavingFile.solider2;
+            nameSolider1 = "" + SavingFile.solider1;
+            ListLinh();
+
+            listOtuong1[SavingFile.solider1 - 1].gameObject.SetActive(true);
+            listOtuong2[SavingFile.solider2 - 1].gameObject.SetActive(true);
+            listOtuong3[SavingFile.solider3 - 1].gameObject.SetActive(true);
+        }
+        
     }
 
 

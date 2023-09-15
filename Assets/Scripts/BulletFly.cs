@@ -23,6 +23,9 @@ public class BulletFly : MonoBehaviour
         if (collision.CompareTag("gach"))
         {
             Destroy(gameObject);
+        }else if (collision.CompareTag("enemy"))
+        {
+            Destroy(gameObject);
         }
     }
 }
