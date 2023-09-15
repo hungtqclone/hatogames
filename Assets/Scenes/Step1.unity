@@ -927,7 +927,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1963500046}
         m_TargetAssemblyTypeName: ChuyenScreen, Assembly-CSharp
-        m_MethodName: QuaCanh3
+        m_MethodName: Home
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1283,6 +1283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d0b1352fcb0062479b1833d1aba1e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
+  pausePanel: {fileID: 0}
+  savingFile: {fileID: 0}
+  Linh: {fileID: 0}
 --- !u!4 &1963500047
 Transform:
   m_ObjectHideFlags: 0
