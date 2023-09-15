@@ -38,7 +38,6 @@ public class EnemySpawner : MonoBehaviour
         delayCreate -= Time.deltaTime;
         TaoQuaiTheoDot();
         RemoveMissingGameObjects();
-        SpawnerLinhTa();
 
 
     }
@@ -78,7 +77,7 @@ public class EnemySpawner : MonoBehaviour
 
     protected virtual void CreateEnemy(Transform enemy,Transform position)
     {
-        Transform enemySpawner = Instantiate(enemy,new Vector3(position.transform.position.x, position.transform.position.y+ Random.Range(-0.2f, 0.2f),0) , Quaternion.Euler(0, 0, 0));
+        Transform enemySpawner = Instantiate(enemy,new Vector3(position.transform.position.x, position.transform.position.y+ Random.Range(0.1f, 0.3f),0) , Quaternion.Euler(0, 0, 0));
         enemySpawner.gameObject.SetActive(true);
         enemySpawner.parent = this.holder;
         listSpawner.Add(enemySpawner);
@@ -86,14 +85,16 @@ public class EnemySpawner : MonoBehaviour
 
     protected virtual void TaoQuaiTheoDot()
     {
+        string nameEnemySpawner = enemyList[Random.Range(0, 2)].name;
+        Debug.Log(nameEnemySpawner);
         if (delayCreate <= 0f)
         {
             if (dem <= dot3 + dot2 + dot1)
             {
                 if (delayEnemy <= 0f && checkEnemy)
                 {
-                    SpawnerEnemyList("LinhDich", listPositionSpawner[1]);
-                    delayEnemy = 0.5f;
+                    SpawnerEnemyList(nameEnemySpawner, listPositionSpawner[1]);
+                    delayEnemy = 2f;
                     dem++;
                 }
 
@@ -122,20 +123,25 @@ public class EnemySpawner : MonoBehaviour
         listSpawner.RemoveAll(item => item == null);
     }
 
-    public void SpawnerLinhDM()
+    public void SpawnerLinhDM1()
     {
-        SpawnerEnemyList("LinhDM", listPositionSpawner[0]);
+        string linh1 = enemyList[SavingFile.solider1 +1].name;
+        SpawnerEnemyList(linh1, listPositionSpawner[0]);
+
+    }
+    public void SpawnerLinhDM2()
+    {
+        string linh1 = enemyList[SavingFile.solider2 +1].name;
+        SpawnerEnemyList(linh1, listPositionSpawner[0]);
 
     }
 
-    public void SpawnerLinhTa()
+    public void SpawnerLinhDM3()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            string linh1 = enemyList[SavingFile.solider1].name;
-            SpawnerEnemyList(linh1, listPositionSpawner[0]);
-
-        }
+        string linh1 = enemyList[SavingFile.solider3 + 1].name;
+        SpawnerEnemyList(linh1, listPositionSpawner[0]);
 
     }
+
+    
 }

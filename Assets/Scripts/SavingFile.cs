@@ -51,6 +51,12 @@ public class SavingFile : MonoBehaviour
         solider1 = gameScore.solider1;
         solider2 = gameScore.solider2;
         solider3 = gameScore.solider3;
+        if(solider1 ==0 || solider2 ==0 || solider3 == 0)
+        {
+            solider1 = 1;
+            solider2 = 2;
+            solider3 = 3;
+        }
         
     }
 
