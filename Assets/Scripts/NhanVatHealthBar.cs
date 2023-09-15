@@ -11,7 +11,7 @@ public class NhanVatHealthBar : MonoBehaviour
     private bool checkHoiMau;
     private float hpGoc;
     private HeathBar heathBar;
-    private Animator animator;
+    public Animator animator;
     private Rigidbody2D rb2d;
     private bool die;
     //Start is called before the first frame update
