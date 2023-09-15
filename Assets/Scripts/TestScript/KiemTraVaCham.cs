@@ -33,7 +33,7 @@ public class KiemTraVaCham : MonoBehaviour
     }
     public void GoiTen()
     {
-        Transform bulletArrow = Instantiate(arow);
+        Transform bulletArrow = Instantiate(arow,arow.transform.position,Quaternion.Euler(0,0,0));
         bulletArrow.gameObject.SetActive(true);
     }
 }
