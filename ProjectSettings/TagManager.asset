@@ -16,6 +16,7 @@ TagManager:
   - testTag
   - CongThanh
   - LinhDich
+  - Bounce
   layers:
   - Default
   - TransparentFX

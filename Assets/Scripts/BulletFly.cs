@@ -15,7 +15,14 @@ public class BulletFly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.parent.Translate(this.direction * this.moveSpeed * Time.deltaTime);
+        transform.Translate(this.direction * this.moveSpeed * Time.deltaTime);
     }
-  
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("gach"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

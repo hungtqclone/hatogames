@@ -43,6 +43,11 @@ public class HealthBarThanhDM : MonoBehaviour
 
             DamgeHP(20);
         }
+        else if (collision.gameObject.CompareTag("CongThanh"))
+        {
+
+            DamgeHP(50);
+        }
     }
     void DamgeHP(float damge)
     {

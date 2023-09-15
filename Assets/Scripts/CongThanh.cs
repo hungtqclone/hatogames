@@ -17,4 +17,11 @@ public class CongThanh : MonoBehaviour
         transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bounce"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
