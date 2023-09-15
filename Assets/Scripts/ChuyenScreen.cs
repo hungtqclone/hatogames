@@ -10,7 +10,7 @@ public class ChuyenScreen : MonoBehaviour
     public GameObject panel;
     public GameObject pausePanel;
     public SavingFile savingFile;
-
+    public GameObject Linh;
     private void Start()
     {
         savingFile = GameObject.Find("SaveData").GetComponent<SavingFile>();
@@ -31,12 +31,17 @@ public class ChuyenScreen : MonoBehaviour
 
     public void OpenPanel()
     {
+        //Linh.gameObject.SetActive(true);
         panel.SetActive(true);
+        
     }
 
     public void ClosePanel()
     {
+        //Linh.gameObject.SetActive(false);
         panel.SetActive(false);
+        
+
     }
     public void QuaMan1()
     {
