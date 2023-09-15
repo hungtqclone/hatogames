@@ -214,6 +214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4654797617238079879}
+  - component: {fileID: 223064273260093481}
   - component: {fileID: 4654797617238079878}
   - component: {fileID: 4654797617238079877}
   - component: {fileID: 4654797617238079881}
@@ -241,6 +242,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &223064273260093481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654797617238079876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ba0b2a00cf3c747a9c64f6960232c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  interactionDistance: 10
+  distanceToEnemy: 2
+  speed: 5
+  nearestDistance: 0
+  castlePrefabs: {fileID: 0}
+  attackTip: {fileID: 0}
+  timeUpdate: 0
 --- !u!114 &4654797617238079878
 MonoBehaviour:
   m_ObjectHideFlags: 0
