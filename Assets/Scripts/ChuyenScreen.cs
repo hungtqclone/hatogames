@@ -31,14 +31,14 @@ public class ChuyenScreen : MonoBehaviour
 
     public void OpenPanel()
     {
-        //Linh.gameObject.SetActive(true);
+        Linh.gameObject.SetActive(true);
         panel.SetActive(true);
         
     }
 
     public void ClosePanel()
     {
-        //Linh.gameObject.SetActive(false);
+        Linh.gameObject.SetActive(false);
         panel.SetActive(false);
         
 
