@@ -19,11 +19,12 @@ public class EnemySpawner : MonoBehaviour
     public bool checkEnemy;
     public Transform holder;
     public List<Transform> listPositionSpawner;
+
     // Start is called before the first frame update
     void Start()
     {
-      linhDot2.gameObject.SetActive(false);
-      linhDot3.gameObject.SetActive(false);
+      if(linhDot2 != null) linhDot2.gameObject.SetActive(false);
+        if (linhDot3 != null) linhDot3.gameObject.SetActive(false);
         if (checkEnemy)
         this.listSpawner = new List<Transform>();
         holder = transform.Find("Holder");
@@ -43,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
         TaoQuaiTheoDot();
         RemoveMissingGameObjects();
 
-
+        Debug.Log("So quai: " +listSpawner.Count);
     }
 
 
@@ -88,6 +89,29 @@ public class EnemySpawner : MonoBehaviour
         listSpawner.Add(enemySpawner);
     }
 
+    protected virtual void SpawnerEnemyListDM(string name, Transform position)
+    {
+
+        foreach (Transform prefab in this.enemyList)
+        {
+            if (prefab.name == name)
+            {
+                CreateEnemyDM(prefab, position);
+
+            }
+
+
+        }
+    }
+
+
+
+    protected virtual void CreateEnemyDM(Transform enemy, Transform position)
+    {
+        Transform enemySpawner = Instantiate(enemy, new Vector3(position.transform.position.x, position.transform.position.y + Random.Range(0.1f, 0.3f), 0), Quaternion.Euler(0, 0, 0));
+        enemySpawner.gameObject.SetActive(true);
+        enemySpawner.parent = this.holder;
+    }
     protected virtual void TaoQuaiTheoDot()
     {
         string nameEnemySpawner = enemyList[Random.Range(0, 2)].name;
@@ -138,7 +162,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (SavingFile.solider1 + 1 > enemyList.Count) return;
         string linh1 = enemyList[SavingFile.solider1 +1].name;
-        SpawnerEnemyList(linh1, listPositionSpawner[0]);
+        SpawnerEnemyListDM(linh1, listPositionSpawner[0]);
 
     }
     public void SpawnerLinhDM2()
@@ -146,7 +170,7 @@ public class EnemySpawner : MonoBehaviour
         if (SavingFile.solider2 + 1 > enemyList.Count) return;
 
         string linh1 = enemyList[SavingFile.solider2 +1].name;
-        SpawnerEnemyList(linh1, listPositionSpawner[0]);
+        SpawnerEnemyListDM(linh1, listPositionSpawner[0]);
 
     }
 
@@ -154,7 +178,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (SavingFile.solider3 + 1 > enemyList.Count) return;
         string linh1 = enemyList[SavingFile.solider3 + 1].name;
-        SpawnerEnemyList(linh1, listPositionSpawner[0]);
+        SpawnerEnemyListDM(linh1, listPositionSpawner[0]);
 
     }
 

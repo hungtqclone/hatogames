@@ -3466,7 +3466,8 @@ MonoBehaviour:
   dot1: 10
   dot2: 30
   dot3: 20
-  tuongDich: {fileID: 0}
+  linhDot3: {fileID: 0}
+  linhDot2: {fileID: 0}
   listSpawner: []
   savingFile: {fileID: 0}
   checkEnemy: 0
@@ -4051,7 +4052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2c2ce5641dfb64e9bc424b3c319049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txtCoin: {fileID: 0}
+  txtCoin: {fileID: 401934638}
 --- !u!4 &1488423043
 Transform:
   m_ObjectHideFlags: 0
