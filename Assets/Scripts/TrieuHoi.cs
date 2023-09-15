@@ -18,14 +18,14 @@ public class TrieuHoi : MonoBehaviour
         timeDelay1 = 0;
         timeDelay2 = 0;
         timeDelay3 = 0;
-        time.text = "" + timeDelay1;
+        //time.text = "" + timeDelay1;
     }
     void Update()
     {
         
         if (timeDelay1 >= 0)
         {
-            time.text = "" + Mathf.FloorToInt(timeDelay1);
+            //time.text = "" + Mathf.FloorToInt(timeDelay1);
         }
         if (timeDelay2 >= 0)
         {
@@ -37,7 +37,7 @@ public class TrieuHoi : MonoBehaviour
         }
         else
         {
-            time.text = "";
+            //time.text = "";
         }
         if (timeDelay1 >=-0.5)
         {
@@ -56,6 +56,7 @@ public class TrieuHoi : MonoBehaviour
         // Kiểm tra nút "C" đã được nhấn chưa
         if (TienGoiLinh.coins>=25 && timeDelay1<=0)
         {
+
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 enemySpawner.SpawnerLinhDM1();
@@ -66,7 +67,8 @@ public class TrieuHoi : MonoBehaviour
         }
         if (TienGoiLinh.coins >= 25 && timeDelay2 <= 0)
         {
-            
+
+
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 enemySpawner.SpawnerLinhDM2();
@@ -80,10 +82,11 @@ public class TrieuHoi : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                enemySpawner.SpawnerLinhDM2();
+                enemySpawner.SpawnerLinhDM3();
                 TienGoiLinh.coins -= 25;
                 timeDelay3 = 2f;
             }
+
 
         }
 

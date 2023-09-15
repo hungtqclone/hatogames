@@ -46,6 +46,7 @@ public class EnemySpawner : MonoBehaviour
 
     protected virtual void EnemyList()
     {
+        enemyList.Clear();
         Transform prefabsEnemy = transform.Find("Prefabs");
         foreach (Transform prefab in prefabsEnemy)
         {
@@ -125,12 +126,15 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnerLinhDM1()
     {
+        if (SavingFile.solider1 + 1 > enemyList.Count) return;
         string linh1 = enemyList[SavingFile.solider1 +1].name;
         SpawnerEnemyList(linh1, listPositionSpawner[0]);
 
     }
     public void SpawnerLinhDM2()
     {
+        if (SavingFile.solider2 + 1 > enemyList.Count) return;
+
         string linh1 = enemyList[SavingFile.solider2 +1].name;
         SpawnerEnemyList(linh1, listPositionSpawner[0]);
 
@@ -138,6 +142,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnerLinhDM3()
     {
+        if (SavingFile.solider3 + 1 > enemyList.Count) return;
         string linh1 = enemyList[SavingFile.solider3 + 1].name;
         SpawnerEnemyList(linh1, listPositionSpawner[0]);
 
