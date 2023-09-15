@@ -11,12 +11,14 @@ public class NhanVatHealthBar : MonoBehaviour
     private bool checkHoiMau;
     private float hpGoc;
     private HeathBar heathBar;
-    private Animator animator;
+    public Animator animator;
     private Rigidbody2D rb2d;
+    private bool die;
     //Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+     
+        die = true;
         checkHoiMau = false;
         heathBar = GetComponentInChildren<HeathBar>();
         hpGoc = hp;
@@ -62,7 +64,12 @@ public class NhanVatHealthBar : MonoBehaviour
             {
                 Debug.LogWarning("Rigidbody2D không được tìm thấy trên đối tượng này.");
             }
-            animator.SetBool("Die", true);
+            if(die)
+            {
+                animator.SetTrigger("Die");
+                die = false;
+            }
+
         }
     }
     public void Die()

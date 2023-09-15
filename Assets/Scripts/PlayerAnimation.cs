@@ -33,4 +33,25 @@ public class PlayerAnimation : MonoBehaviour
         PlayerShooting.Instance.Shooting();
         isShooting=false;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            anim.SetBool("DanhGan", true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            anim.SetBool("DanhGan", false);
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
 }

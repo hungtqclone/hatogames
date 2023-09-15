@@ -47,6 +47,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3138213431532703183}
   - component: {fileID: 2859265788270947928}
+  - component: {fileID: 7844915668612913341}
   - component: {fileID: 3138213431532703180}
   - component: {fileID: -8004479663712043329}
   - component: {fileID: 6032812882963443319}
@@ -88,6 +89,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 500
   hpKiemBiTru: 20
+--- !u!114 &7844915668612913341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3138213431532703181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ba0b2a00cf3c747a9c64f6960232c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &3138213431532703180
 SpriteRenderer:
   m_ObjectHideFlags: 0
