@@ -34,11 +34,11 @@ public class ChuyenScreen : MonoBehaviour
     }
     public void QuaMan1()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(6);
     }
     public void QuaMan2()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(7);
     }
     public void QuaMan3()
     {
