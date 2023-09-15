@@ -17,6 +17,7 @@ public class LinhDich2 : MonoBehaviour
     public float hpKiemBiTru;
     public float hpGoc;
     public HeathBar heathBar;
+    private float moveSpeed_;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -26,6 +27,7 @@ public class LinhDich2 : MonoBehaviour
         gapThanhDM = false;
         heathBar = GetComponentInChildren<HeathBar>();
         hpGoc = hp;
+        moveSpeed_ = moveSpeed;
         //hp = 50;
     }
 
@@ -63,7 +65,7 @@ public class LinhDich2 : MonoBehaviour
         else
         {
             animator.SetBool("CheckEnemy", false);
-            moveSpeed = 2;
+            moveSpeed = moveSpeed_;
         }
     }
 
@@ -100,6 +102,11 @@ public class LinhDich2 : MonoBehaviour
         {
 
             DamgeHP(20);
+        }
+        else if (collision.gameObject.CompareTag("CongThanh"))
+        {
+
+            DamgeHP(50);
         }
     }
 
