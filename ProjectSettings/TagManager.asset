@@ -15,6 +15,7 @@ TagManager:
   - ThanhDM
   - testTag
   - CongThanh
+  - LinhDich
   layers:
   - Default
   - TransparentFX
