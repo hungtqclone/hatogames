@@ -12,7 +12,6 @@ public class WinLossScript : MonoBehaviour
     [SerializeField] protected NhanVatHealthBar playerHealbar;
     [SerializeField] protected HealthBarThanhDM truDichHealbar;
     [SerializeField] protected HealthBarThanhDM truDMHealbar;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +36,10 @@ public class WinLossScript : MonoBehaviour
             Time.timeScale = 0;
 
         }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
     private void FixedUpdate()
     {
@@ -49,6 +52,7 @@ public class WinLossScript : MonoBehaviour
     }
     public virtual void ScreenMap()
     {
+        
         SceneManager.LoadScene(2);
     }
 
