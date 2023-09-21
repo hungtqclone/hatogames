@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 4466062645546829077}
   - component: {fileID: 4466062645546829074}
   - component: {fileID: 4466062645546829076}
+  - component: {fileID: 8816580519186657173}
   m_Layer: 7
   m_Name: TruDich
   m_TagString: enemy
@@ -529,6 +530,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4086331, y: 3.2987826}
   m_EdgeRadius: 0
+--- !u!95 &8816580519186657173
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466062645546829073}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3932ad7bcc6411e4bb098d929e146cf7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4466062645704953568
 GameObject:
   m_ObjectHideFlags: 0

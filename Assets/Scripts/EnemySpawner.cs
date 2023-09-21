@@ -139,15 +139,27 @@ public class EnemySpawner : MonoBehaviour
                 }
                 if (dem == dot2 + dot1)
                 {
-
+                    if (linhDot2 == null)
+                    {
+                        return;
+                    }
                     linhDot2.gameObject.SetActive(true);
                     return;
                 }
                 if (dem == dot3 + dot2 + dot1)
                 {
+
+                    if (linhDot3 == null)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        linhDot3.gameObject.SetActive(true);
+                        return;
+                    }
                     
-                    linhDot3.gameObject.SetActive(true);
-                    return;
+                    
                 }
             }
 
