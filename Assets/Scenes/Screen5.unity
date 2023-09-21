@@ -1137,7 +1137,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 204031941}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 543186101}
+        m_TargetAssemblyTypeName: WinLossScript, Assembly-CSharp
+        m_MethodName: ScreenMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &204031941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2528,6 +2540,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5137544595953141077, guid: d3eddafb611954348bff495fe81bb32d, type: 3}
+      propertyPath: hp
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7774771509728704161, guid: d3eddafb611954348bff495fe81bb32d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3472,6 +3488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543186100}
+  - component: {fileID: 543186101}
   - component: {fileID: 543186099}
   - component: {fileID: 543186098}
   - component: {fileID: 543186097}
@@ -3565,6 +3582,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &543186101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543186096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fa7ea364ebe174caaf23822ec9bef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelWin: {fileID: 800731899}
+  panelLoss: {fileID: 1036967748}
+  playerHealbar: {fileID: 1066321457}
+  truDichHealbar: {fileID: 1779903576}
+  truDMHealbar: {fileID: 1679080474}
 --- !u!1 &614594300
 GameObject:
   m_ObjectHideFlags: 0
@@ -4479,7 +4513,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 896115287}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 543186101}
+        m_TargetAssemblyTypeName: WinLossScript, Assembly-CSharp
+        m_MethodName: ScreenMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &896115287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4863,7 +4909,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 993213246}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 543186101}
+        m_TargetAssemblyTypeName: WinLossScript, Assembly-CSharp
+        m_MethodName: ScreenHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &993213246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5133,6 +5191,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036967748}
   m_CullTransparentMesh: 1
+--- !u!114 &1066321457 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5137544595953141077, guid: d3eddafb611954348bff495fe81bb32d, type: 3}
+  m_PrefabInstance: {fileID: 411427130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b520bc633b6074e80afc96103b6e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1078040975 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4347003978471213395, guid: a2f2bbcad90130d4d977c1410b7c48d5, type: 3}
@@ -7088,7 +7157,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1571699152}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 543186101}
+        m_TargetAssemblyTypeName: WinLossScript, Assembly-CSharp
+        m_MethodName: ScreenHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Btnchonlinh
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1571699152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7284,6 +7365,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659937533}
   m_CullTransparentMesh: 1
+--- !u!114 &1679080474 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4654797617238079878, guid: 6f4da602ff538f84cb3a753293408160, type: 3}
+  m_PrefabInstance: {fileID: 1367485637}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38040a2d592595949af58a8842ce417f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1736426061
 GameObject:
   m_ObjectHideFlags: 0
@@ -7382,6 +7474,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de26a204cfed5b47aac8710755b09ef, type: 3}
+--- !u!114 &1779903576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4466062645546829077, guid: 9f192d64086688541a35bc3e741b1852, type: 3}
+  m_PrefabInstance: {fileID: 2118785182}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38040a2d592595949af58a8842ce417f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1791981589
 GameObject:
   m_ObjectHideFlags: 0
