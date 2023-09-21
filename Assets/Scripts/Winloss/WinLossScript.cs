@@ -29,17 +29,23 @@ public class WinLossScript : MonoBehaviour
         {
             panelLoss.SetActive(true);
             Time.timeScale = 0;
-        } 
-       if(truDichHealbar.hp <= 0)
+        }
+        if (truDichHealbar.hp <= 0)
         {
             panelWin.SetActive(true);
             Time.timeScale = 0;
 
         }
-        else
+        if(playerHealbar.hp > 0 && truDMHealbar.hp > 0 && truDichHealbar.hp > 0)
         {
             Time.timeScale = 1;
         }
+
+        //else
+        //{
+        //    Time.timeScale = 1;
+        //}
+        
     }
     private void FixedUpdate()
     {
