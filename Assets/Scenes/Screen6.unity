@@ -1013,7 +1013,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 60813bc359a00894493d0d1398458810, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 531b704d8729a5b4ca74c0688c06e93f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7562,7 +7562,7 @@ PrefabInstance:
     - target: {fileID: 2910589702738799697, guid: d3eddafb611954348bff495fe81bb32d, type: 3}
       propertyPath: vatPham
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 292797845}
     - target: {fileID: 2910589702738799698, guid: d3eddafb611954348bff495fe81bb32d, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7843,6 +7843,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4466062645546829077, guid: 9f192d64086688541a35bc3e741b1852, type: 3}
+      propertyPath: hp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466062645546829077, guid: 9f192d64086688541a35bc3e741b1852, type: 3}
       propertyPath: hpKiemBiTru
       value: 10
       objectReference: {fileID: 0}
@@ -7853,7 +7857,7 @@ PrefabInstance:
     - target: {fileID: 9178932039970952178, guid: 9f192d64086688541a35bc3e741b1852, type: 3}
       propertyPath: RoiVP
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 292797849}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f192d64086688541a35bc3e741b1852, type: 3}
 --- !u!1 &2112866200

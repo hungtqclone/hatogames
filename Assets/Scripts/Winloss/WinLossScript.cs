@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class WinLossScript : MonoBehaviour
 {
-    [SerializeField] protected GameObject panelWin;
+    [SerializeField] public GameObject panelWin;
     [SerializeField] protected GameObject panelLoss;
     [SerializeField] protected NhanVatHealthBar playerHealbar;
     [SerializeField] protected HealthBarThanhDM truDichHealbar;
@@ -36,8 +36,8 @@ public class WinLossScript : MonoBehaviour
         }
         if (truDichHealbar.hp <= 0 && roiVPScript.RoiVP == null)
         {
-            panelWin.SetActive(true);
-            Time.timeScale = 0;
+           panelWin.SetActive(true);
+            Time.timeScale  = 0;
 
         }
         if(playerHealbar.hp > 0 && truDMHealbar.hp > 0 && truDichHealbar.hp > 0)
@@ -55,6 +55,7 @@ public class WinLossScript : MonoBehaviour
     {
         
     }
+
 
     public virtual void ScreenHome()
     {

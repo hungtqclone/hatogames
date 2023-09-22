@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class ChonLinhChoi : MonoBehaviour
 {
 
-    private static TestLinh instance;
-    public static TestLinh Instance { get => instance; set => instance = value; }
+    private static ChonLinhChoi instance;
+    public static ChonLinhChoi Instance { get => instance; set => instance = value; }
 
     public ListLinhChonChoi listLinhChonChoi;
 

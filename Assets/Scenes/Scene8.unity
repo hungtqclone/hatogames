@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 228441466}
   - component: {fileID: 228441465}
+  - component: {fileID: 228441467}
   m_Layer: 0
   m_Name: Asset 571
   m_TagString: Untagged
@@ -207,6 +208,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &228441467
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228441464}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.8847568}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.55, y: 4.2}
+    newSize: {x: 6.55, y: 4.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.55, y: 0.43048632}
+  m_EdgeRadius: 0
 --- !u!1 &306325857
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +405,10 @@ PrefabInstance:
     - target: {fileID: 4466062645546829075, guid: 9f192d64086688541a35bc3e741b1852, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466062645546829077, guid: 9f192d64086688541a35bc3e741b1852, type: 3}
+      propertyPath: hp
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9178932039970952178, guid: 9f192d64086688541a35bc3e741b1852, type: 3}
       propertyPath: RoiVP
@@ -601,7 +632,7 @@ PrefabInstance:
     - target: {fileID: 2910589701285357623, guid: d3eddafb611954348bff495fe81bb32d, type: 3}
       propertyPath: bulletPrefabs
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 306325858}
     - target: {fileID: 2910589702414872930, guid: d3eddafb611954348bff495fe81bb32d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1989,7 +2020,7 @@ GameObject:
   - component: {fileID: 1828594884}
   - component: {fileID: 1828594883}
   m_Layer: 0
-  m_Name: ManhMap4
+  m_Name: ManhMap3
   m_TagString: vatPham
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2083,7 +2114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 531b704d8729a5b4ca74c0688c06e93f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60813bc359a00894493d0d1398458810, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2102,7 +2133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828594882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.78, y: -3.32, z: 0}
+  m_LocalPosition: {x: 3.78, y: -3.69, z: 0}
   m_LocalScale: {x: 0.12564303, y: 0.12564303, z: 0.12564303}
   m_ConstrainProportionsScale: 0
   m_Children: []

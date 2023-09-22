@@ -45,19 +45,19 @@ public class ChuyenScreen : MonoBehaviour
     }
     public void QuaMan1()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(4);
     }
     public void QuaMan2()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(5);
     }
     public void QuaMan3()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
     }
     public void QuaMan4()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(7);
     }
 
     public void OpenPausePanel()
