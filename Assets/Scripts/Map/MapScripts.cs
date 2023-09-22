@@ -5,7 +5,7 @@ using UnityEngine;
 public class MapScripts : MonoBehaviour
 {
 
-    public static bool map1,map2,map3,map4;
+    public static bool map1 = false,map2 = false,map3 = false,map4 =  false;
     public GameObject manhMap1;
     public GameObject manhMap2;
     public GameObject manhMap3;
@@ -13,14 +13,7 @@ public class MapScripts : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        map1 = true;
-        map2 = false;
-        map3 = false;
-        map4 = false;
-        manhMap1 = GameObject.Find("Manh1");
-        manhMap2 = GameObject.Find("Manh2");
-        manhMap3 = GameObject.Find("Manh3");
-        manhMap4 = GameObject.Find("Manh4");
+        
     }
 
     // Update is called once per frame

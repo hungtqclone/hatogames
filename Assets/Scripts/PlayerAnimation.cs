@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,12 +9,13 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] protected Animator anim;
     [SerializeField] public static bool isShooting;
     [SerializeField] protected GameObject vatPham;
+    [SerializeField] protected PlayerMovement playerMovement;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerMovement = GameObject.Find("PlayerMovement").GetComponent<PlayerMovement>();
         anim = GetComponent<Animator>();   
     }
 
@@ -44,7 +45,10 @@ public class PlayerAnimation : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("vatPham"))
         {
+            playerMovement.speed = 1;
             anim.SetBool("NhatVP", true);
+            
+
         }
     }
 
@@ -70,6 +74,12 @@ public class PlayerAnimation : MonoBehaviour
     {
         // Destroy(collision.gameObject);
         Destroy(vatPham.gameObject);
+        //MapScripts.map1 = true;
+        //Debug.Log("Tên vật phẩm " + vatPham.name.Equals("ManhMap1"));
+        if (vatPham.name.Equals("ManhMap1")) MapScripts.map1 = true;
+        if (vatPham.name.Equals("ManhMap2")) MapScripts.map2 = true;
+        if (vatPham.name.Equals("ManhMap3")) MapScripts.map3 = true;
+        if (vatPham.name.Equals("ManhMap4")) MapScripts.map4 = true;
     }
 
     

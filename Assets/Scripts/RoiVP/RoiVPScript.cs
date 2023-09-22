@@ -24,7 +24,7 @@ public class RoiVPScript : MonoBehaviour
         {
             Vector3 thePosVP = RoiVP.transform.position;
             thePosVP.x = Random.Range(-5, 5);
-            thePosVP.y = -4.2f;
+            thePosVP.y = RoiVP.transform.position.y;
             RoiVP.transform.position = thePosVP;
             RoiVP.gameObject.SetActive(true);
             check = false;

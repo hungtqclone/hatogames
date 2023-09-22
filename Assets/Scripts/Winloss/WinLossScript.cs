@@ -27,6 +27,8 @@ public class WinLossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
+
        if(playerHealbar.hp <= 0 || truDMHealbar.hp <= 0)
         {
             panelLoss.SetActive(true);
