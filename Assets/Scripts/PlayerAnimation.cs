@@ -8,11 +8,13 @@ public class PlayerAnimation : MonoBehaviour
 
     [SerializeField] protected Animator anim;
     [SerializeField] public static bool isShooting;
+    [SerializeField] protected GameObject vatPham;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        
         anim = GetComponent<Animator>();   
     }
 
@@ -40,6 +42,10 @@ public class PlayerAnimation : MonoBehaviour
         {
             anim.SetBool("DanhGan", true);
         }
+        if (collision.gameObject.CompareTag("vatPham"))
+        {
+            anim.SetBool("NhatVP", true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -54,4 +60,17 @@ public class PlayerAnimation : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
+
+    
+    public void DestroyVP()
+    {
+        // Destroy(collision.gameObject);
+        Destroy(vatPham.gameObject);
+    }
+
+    
 }

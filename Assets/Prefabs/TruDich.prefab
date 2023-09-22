@@ -411,9 +411,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4466062645546829075}
   - component: {fileID: 4466062645546829077}
+  - component: {fileID: 4714877960084229095}
+  - component: {fileID: 9178932039970952178}
   - component: {fileID: 4466062645546829074}
   - component: {fileID: 4466062645546829076}
-  - component: {fileID: 8816580519186657173}
+  - component: {fileID: 6592920734281140965}
   m_Layer: 7
   m_Name: TruDich
   m_TagString: enemy
@@ -452,6 +454,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 200
   hpKiemBiTru: 10
+--- !u!114 &4714877960084229095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466062645546829073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e594cd97fc3b10a478db5ec8e4aa19e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9178932039970952178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466062645546829073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32c6978aca65bd44afea40f342da82d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RoiVP: {fileID: 0}
+  healthBarThanhDM: {fileID: 0}
+  check: 0
 --- !u!212 &4466062645546829074
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -530,7 +559,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4086331, y: 3.2987826}
   m_EdgeRadius: 0
---- !u!95 &8816580519186657173
+--- !u!95 &6592920734281140965
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

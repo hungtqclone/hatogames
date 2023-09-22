@@ -12,9 +12,11 @@ public class WinLossScript : MonoBehaviour
     [SerializeField] protected NhanVatHealthBar playerHealbar;
     [SerializeField] protected HealthBarThanhDM truDichHealbar;
     [SerializeField] protected HealthBarThanhDM truDMHealbar;
+    [SerializeField] protected RoiVPScript roiVPScript;
     // Start is called before the first frame update
     void Start()
     {
+        roiVPScript= GameObject.Find("TruDich").GetComponent<RoiVPScript>();
         if (panelWin == null || panelLoss == null || playerHealbar == null || truDichHealbar == null || truDMHealbar == null) 
         {
             Debug.LogError("Bạn chưa khởi tạo đủ");
@@ -30,7 +32,7 @@ public class WinLossScript : MonoBehaviour
             panelLoss.SetActive(true);
             Time.timeScale = 0;
         }
-        if (truDichHealbar.hp <= 0)
+        if (truDichHealbar.hp <= 0 && roiVPScript.RoiVP == null)
         {
             panelWin.SetActive(true);
             Time.timeScale = 0;
