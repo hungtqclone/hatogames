@@ -21,7 +21,7 @@ public class ChuyenScreen : MonoBehaviour
     }
     public void Home()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void QuaCanh3()
     {

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using TMPro.EditorUtilities;
 using UnityEngine.SceneManagement;
 
 public class WinLossScript : MonoBehaviour
@@ -59,7 +58,7 @@ public class WinLossScript : MonoBehaviour
 
     public virtual void ScreenHome()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public virtual void ScreenMap()
     {

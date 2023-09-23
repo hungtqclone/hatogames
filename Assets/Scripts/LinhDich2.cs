@@ -106,7 +106,7 @@ public class LinhDich2 : MonoBehaviour
         else if (collision.gameObject.CompareTag("CongThanh"))
         {
 
-            DamgeHP(50);
+            DamgeHP(10);
         }
     }
 
