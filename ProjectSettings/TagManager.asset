@@ -3,18 +3,32 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - enemy
+  - gach
+  - kiem
+  - De1
+  - NguyenNhac
+  - linh
+  - kiemDich
+  - Arrow
+  - ThanhDM
+  - testTag
+  - CongThanh
+  - LinhDich
+  - Bounce
+  - vatPham
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - De1
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Main
+  - enemy
+  - De2
+  - linh
   - 
   - 
   - 
