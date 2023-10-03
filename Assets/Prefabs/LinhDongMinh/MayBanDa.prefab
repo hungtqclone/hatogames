@@ -68,7 +68,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  interactionDistance: 8
+  interactionDistance: 5
   moveSpeed: 1
   hp: 100
   hpKiemDichBiTru: 10
